@@ -1,168 +1,168 @@
 .app {
-    display: grid;
-    grid-template-columns: 10% 10% 60% 10%;
-    grid-template-rows: 150px auto 70px;
-    grid-template-areas: 
-        " . header header ."
-        ". sidebar main ."
-        ". footer footer .";
+  display: grid;
+  grid-template-columns: 10% 10% 60% 10%;
+  grid-template-rows: 150px auto 70px;
+  grid-template-areas: 
+    " . header header ."
+    ". sidebar main ."
+    ". footer footer .";
 }
 
 .app-header {
-    grid-area: header;
+  grid-area: header;
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    min-height: 100px;
-    padding: 10px;
+  min-height: 100px;
+  padding: 10px;
 
-    color: #ba5536;
+  color: #ba5536;
 
-    background-color: #46211a;
+  background-color: #46211a;
 }
 
 .main-menu {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .main-menu__container {
-    display: flex;
+  display: flex;
 }
 
 .main-menu__item:not(:last-child) {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .main-menu__item-link {
-    display: block;
+  display: block;
 
-    padding: 10px 20px;
+  padding: 10px 20px;
 
-    font-size: 25px;
+  font-size: 25px;
 
-    background-color: #a43820;
+  background-color: #a43820;
 
-    color: #46211a;
+  color: #46211a;
 }
 
 .main-menu__item-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .main-menu__item--active .main-menu__item-link {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .logo {
-    align-self: center;
-    flex-grow: 1;
+  align-self: center;
+  flex-grow: 1;
 
-    font-family: 'Kaushan Script', cursive;
-    font-size: 50px;
-    color: #ffffff;
-    text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .app-sidebar {
-    grid-area: sidebar;
+  grid-area: sidebar;
 
-    min-width: 100px;
-    min-height: 500px;
-    padding: 10px;
+  min-width: 100px;
+  min-height: 500px;
+  padding: 10px;
 
-    background-color: #a43820;
+  background-color: #a43820;
 
-    color: #46211a;
+  color: #46211a;
 }
 
 .sidebar-menu__item {
-    text-align: right;
+  text-align: right;
 }
 
 .sidebar-menu__item:not(:last-child) {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .sidebar-menu__item-link {
-    display: block;
+  display: block;
 
-    padding: 10px;
+  padding: 10px;
 
-    font-size: 25px;
-    color: #a43820;
+  font-size: 25px;
+  color: #a43820;
 
-    background-color: #46211a;
+  background-color: #46211a;
 }
 
 .sidebar-menu__item-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .sidebar-menu__item--active .sidebar-menu__item-link {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .app-main {
-    grid-area: main;
+  grid-area: main;
 
-    min-width: 800px;
-    min-height: calc(100vh - 220px);
-    padding: 20px 40px;
+  min-width: 800px;
+  min-height: calc(100vh - 220px);
+  padding: 20px 40px;
 
-    color: #46211a;
+  color: #46211a;
 
-    background-color: #ba5536;
+  background-color: #ba5536;
 }
 
 .app-main h1 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
-    font-size: 40px;
-    text-align: center;
+  font-size: 40px;
+  text-align: center;
 
-    color: #693d3d;
+  color: #693d3d;
 }
 
 .app-main h2 {
-    display: inline-block;
+  display: inline-block;
 
-    margin-top: 30px;
-    padding-bottom: 5px;
+  margin-top: 30px;
+  padding-bottom: 5px;
 
-    font-size: 30px;
+  font-size: 30px;
 
-    color: #693d3d;
+  color: #693d3d;
 
-    border-bottom: 2px solid #693d3d;
+  border-bottom: 2px solid #693d3d;
 }
 
 .app-main p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 30px;
 }
 
 .app-main h2 ~ p {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .app-footer {
-    grid-area: footer;
+  grid-area: footer;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 
-    padding: 10px;
+  padding: 10px;
 
-    background-color: #693d3d;
+  background-color: #693d3d;
 }
 
 .copyright {
-    color: #ba5536;
+  color: #ba5536;
 }
