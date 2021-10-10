@@ -5,7 +5,7 @@ export const Menu = () => {
   const items = mainMenuItems.map(({name, href, isActive}, index) => {
     return (
       <Item
-        key={index}
+        key={`${index}-${name}`}
         className="main-menu__item"
         name={name}
         href={href}
