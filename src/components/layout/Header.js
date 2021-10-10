@@ -1,11 +1,11 @@
-import { Menu } from "./main-menu";
-import { Logo } from "../.";
+import { Logo } from "../Logo";
+import { MainMenu } from "./MainMenu";
 
 export function Header() {
   return (
     <header className="app-header">
       <Logo />
-      <Menu />
+      <MainMenu />
     </header>
   );
 }
