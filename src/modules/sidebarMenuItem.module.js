@@ -1,8 +1,8 @@
 import { MenuItem } from "./menuItem.module";
 
-export class MainMenuItem extends MenuItem {
+export class SidebarMenuItem extends MenuItem {
   constructor(item) {
     super(item);
-    this.className = "main-menu__item";
+    this.className = "sidebar-menu__item";
   }
 }
