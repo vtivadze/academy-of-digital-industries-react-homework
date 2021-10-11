@@ -2,7 +2,7 @@ import React from "react";
 
 import { Header, Main, Footer, Sidebar } from "./components/layout";
 import { mainMenuItems } from "./api";
-import { MainContent } from "./components/content";
+import { contents } from "./components/content";
 
 import "./App.css";
 
@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = {
       mainMenuItems: mainMenuItems,
-      content: <MainContent />,
+      content: contents.Main,
     }
 
     this.mainMenuItemsHandleClick = this.mainMenuItemsHandleClick.bind(this);
@@ -20,10 +20,13 @@ class App extends React.Component {
 
   mainMenuItemsHandleClick(i) {
     const items = this.state.mainMenuItems;
-    this.setState({items: items.map((item, index) => {
-      item.isActive = i === index;
-      return item;
-    })});
+    this.setState({
+      items: items.map((item, index) => {
+        item.isActive = i === index;
+        return item;
+      }),
+      content: contents[`${items[i].name}`],
+   });
   }
 
   render() {

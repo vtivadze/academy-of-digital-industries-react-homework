@@ -1,4 +1,4 @@
-export function MainContent() {
+export function Main() {
   return (
     <>
       <h1>React Features</h1>
