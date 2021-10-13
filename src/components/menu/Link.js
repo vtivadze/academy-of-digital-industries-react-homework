@@ -6,7 +6,7 @@ export const Link = (props) => {
 
   return (
     <a
-      className={`${className}-link`}
+      className={`${className}-link button is-size-4 is-block`}
       href={href}
       title={name}
     >

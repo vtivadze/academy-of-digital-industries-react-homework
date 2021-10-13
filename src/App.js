@@ -39,16 +39,24 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <Header
-          mainMenuItems={mainMenuItems}
-          handleClick={this.menuItemsHandleClick}
-        />
-        <Sidebar 
-          sidebarMenuItems={sidebarMenuItems}
-          handleClick={this.menuItemsHandleClick}
-        />
-        <Main content={content} />
-        <Footer />
+        <div className="container">
+          <Header
+            mainMenuItems={mainMenuItems}
+            handleClick={this.menuItemsHandleClick}
+          />
+        </div>
+        <div className="container column">
+          <div className="columns is-gapeless">
+            <Sidebar 
+              sidebarMenuItems={sidebarMenuItems}
+              handleClick={this.menuItemsHandleClick}
+            />
+            <Main content={content} />
+          </div>
+        </div>
+        <div className="container">
+          <Footer />
+        </div>
       </div>
     );
   }
