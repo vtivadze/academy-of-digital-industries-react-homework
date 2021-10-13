@@ -6,12 +6,17 @@ export const Item = props => {
   const { item: {name, href, isActive, className}, handleClick, index } = props;
   const link = new ItemLink(name, href, className);
   
-  const classes = isActive
-          ? `${className} ${className}--active`
-          : className;
+  const getClasses = () => {
+    return isActive
+      ? `${className} ${className}--active`
+      : className;
+  }
 
   return (
-    <li className={classes} onClick={handleClick.bind(null, index)} >
+    <li
+      className={ getClasses() }
+      onClick={ handleClick.bind(null, index) }
+    >
       <Link link={ link } />
     </li>
   );
