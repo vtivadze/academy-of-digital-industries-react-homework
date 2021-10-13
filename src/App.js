@@ -38,16 +38,18 @@ class App extends React.Component {
     const content = this.state.content;
 
     return (
-      <div className="app">
+      <div className="app container">
         <Header
           mainMenuItems={mainMenuItems}
           handleClick={this.menuItemsHandleClick}
         />
-        <Sidebar 
-          sidebarMenuItems={sidebarMenuItems}
-          handleClick={this.menuItemsHandleClick}
-        />
-        <Main content={content} />
+        <div className="tile">
+          <Sidebar 
+            sidebarMenuItems={sidebarMenuItems}
+            handleClick={this.menuItemsHandleClick}
+          />
+          <Main content={content} />
+        </div>
         <Footer />
       </div>
     );
