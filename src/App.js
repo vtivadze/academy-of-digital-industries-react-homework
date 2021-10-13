@@ -11,17 +11,18 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      mainMenuItems: mainMenuItems,
-      sidebarMenuItems: sidebarMenuItems,
+      mainMenuItems,
+      sidebarMenuItems,
       content: contents.Main,
     }
 
-    this.mainMenuItemsHandleClick = this.mainMenuItemsHandleClick.bind(this);
-    this.sidebarMenuItemsHandleClick = this.sidebarMenuItemsHandleClick.bind(this);
+    this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
   }
 
-  mainMenuItemsHandleClick(i) {
-    const items = this.state.mainMenuItems;
+  menuItemsHandleClick(i, className) {
+    const menuName = className.replace('-menu__item', '');
+    const items = this.state[`${menuName}MenuItems`];
+
     this.setState({
       items: items.map((item, index) => {
         item.isActive = i === index;
@@ -29,17 +30,6 @@ class App extends React.Component {
       }),
       content: contents[`${items[i].name}`],
    });
-  }
-
-  sidebarMenuItemsHandleClick(i) {
-    const items = this.state.sidebarMenuItems;
-    this.setState({
-      items: items.map((item, index) => {
-        item.isActive = i === index;
-        return item;
-      }),
-      content: contents[`${items[i].name}`],
-    });
   }
 
   render() {
@@ -51,11 +41,11 @@ class App extends React.Component {
       <div className="app">
         <Header
           mainMenuItems={mainMenuItems}
-          handleClick={this.mainMenuItemsHandleClick}
+          handleClick={this.menuItemsHandleClick}
         />
         <Sidebar 
           sidebarMenuItems={sidebarMenuItems}
-          handleClick={this.sidebarMenuItemsHandleClick}
+          handleClick={this.menuItemsHandleClick}
         />
         <Main content={content} />
         <Footer />

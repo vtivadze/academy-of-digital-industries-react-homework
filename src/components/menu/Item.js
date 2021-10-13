@@ -15,7 +15,7 @@ export const Item = props => {
   return (
     <li
       className={ getClasses() }
-      onClick={ handleClick.bind(null, index) }
+      onClick={ handleClick.bind(null, index, className) }
     >
       <Link link={ link } />
     </li>
