@@ -1,7 +1,7 @@
 import { Logo } from "../Logo";
 import { MainMenu } from "./MainMenu";
 
-export function Header(props) {
+export const Header = props => {
   return (
     <header className="app-header">
       <Logo />

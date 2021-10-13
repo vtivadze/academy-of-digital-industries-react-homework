@@ -1,9 +1,12 @@
 import { SidebarMenu } from ".";
 
-export function Sidebar() {
+export const Sidebar = props => {
   return (
     <aside className="app-sidebar">
-      <SidebarMenu />
+      <SidebarMenu
+        items={props.sidebarMenuItems}
+        handleClick={props.handleClick}
+      />
     </aside>
   );
 }

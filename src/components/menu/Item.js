@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { Link as ItemLink, MenuItem } from "../../modules";
 import { Link } from "./Link";
 
-export function Item(props) {
+export const Item = props => {
   const { item: {name, href, isActive, className}, handleClick, index } = props;
   const link = new ItemLink(name, href, className);
-
+  
   const classes = isActive
           ? `${className} ${className}--active`
           : className;
