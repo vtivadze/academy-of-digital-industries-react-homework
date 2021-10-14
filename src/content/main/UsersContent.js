@@ -1,5 +1,7 @@
+import { User } from "../../components";
+
 export const UsersContent = () => {
   return (
-    <div>Users Content</div>
+    <User />
   );
 };
