@@ -1,5 +1,5 @@
 import React from "react";
-import { List } from "../menu";
+import { List } from "../components/menu";
 
 export const SidebarMenu = props =>  {
   const items = props.items;

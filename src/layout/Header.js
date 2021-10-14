@@ -1,4 +1,4 @@
-import { Logo } from "../Logo";
+import { Logo } from "../components";
 import { MainMenu } from "./MainMenu";
 
 export const Header = props => {

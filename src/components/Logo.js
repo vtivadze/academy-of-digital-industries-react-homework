@@ -6,9 +6,9 @@ export const Logo = () => {
           <img src={require("../images/logo192.png").default} alt="React Logo" />
         </p>
       </figure>
-      <figcaptin className="media-content tile is-align-self-center">
+      <figcaption className="media-content tile is-align-self-center">
         <p className="content">React Is The Best</p>
-      </figcaptin>
+      </figcaption>
     </div>
   );
 }
