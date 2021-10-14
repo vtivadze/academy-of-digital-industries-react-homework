@@ -1,6 +1,6 @@
 export const sidebarMenuItems = [
   ['Counter', '#',true],
-  ['Item 2', '#',false],
+  ['Users', '#',false],
   ['Item 3', '#',false],
   ['Item 4', '#',false],
 ];

@@ -1,6 +1,7 @@
-import { MainContent, CounterContent } from "../index";
+import { MainContent, CounterContent, UsersContent } from "../index";
 
 export const mainContents = {
   Main: <MainContent />,
-  Counter: <CounterContent />
+  Counter: <CounterContent />,
+  Users: <UsersContent />
 };

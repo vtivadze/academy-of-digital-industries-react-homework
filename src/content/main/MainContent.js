@@ -1,4 +1,4 @@
-export function MainContent() {
+export const MainContent = () => {
   return (
     <div className="conainer">
       <h1 className="mb-3 is-size-1 has-text-centered">React Features</h1>
@@ -16,4 +16,4 @@ export function MainContent() {
       <p className="my-2 is-size-5">React can also render on the server using Node and power mobile apps using React Native.</p>
     </div>
   );
-}
+};
