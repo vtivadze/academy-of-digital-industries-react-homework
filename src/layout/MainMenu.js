@@ -1,4 +1,4 @@
-import { List } from "../menu";
+import { List } from "../components/menu";
 
 export const MainMenu = props => {
   const items = props.items;

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Header, Main, Footer, Sidebar } from "./components/layout";
+import { Header, Main, Footer, Sidebar } from "./layout";
 import { mainMenuItems, sidebarMenuItems } from "./api";
-import { contents } from "./components/content";
+import { mainContents } from "./content";
 
 import "./App.css";
 
@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       mainMenuItems,
       sidebarMenuItems,
-      content: contents.Main,
+      mainContent: mainContents.Counter,
     }
 
     this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
@@ -28,29 +28,35 @@ class App extends React.Component {
         item.isActive = i === index;
         return item;
       }),
-      content: contents[`${items[i].name}`],
+      mainContent: mainContents[`${items[i].name}`],
    });
   }
 
   render() {
     const mainMenuItems = this.state.mainMenuItems;
     const sidebarMenuItems = this.state.sidebarMenuItems;
-    const content = this.state.content;
+    const mainContent = this.state.mainContent;
 
     return (
-      <div className="app container">
-        <Header
-          mainMenuItems={mainMenuItems}
-          handleClick={this.menuItemsHandleClick}
-        />
-        <div className="tile">
-          <Sidebar 
-            sidebarMenuItems={sidebarMenuItems}
+      <div className="app">
+        <div className="container">
+          <Header
+            mainMenuItems={mainMenuItems}
             handleClick={this.menuItemsHandleClick}
           />
-          <Main content={content} />
         </div>
-        <Footer />
+        <div className="container column">
+          <div className="columns is-gapeless">
+            <Sidebar 
+              sidebarMenuItems={sidebarMenuItems}
+              handleClick={this.menuItemsHandleClick}
+            />
+            <Main content={mainContent} />
+          </div>
+        </div>
+        <div className="container">
+          <Footer />
+        </div>
       </div>
     );
   }
