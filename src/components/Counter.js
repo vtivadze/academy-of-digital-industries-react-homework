@@ -7,11 +7,10 @@ export const Counter = ({initialValue, initialStep}) => {
 
   const setCustomStartingStep = (event) => {
     let customStartingStep = parseInt(event.target.value);
+
     customStartingStep = customStartingStep >= 0
       ? customStartingStep
       : 0;
-    setStatingStep(customStartingStep);
-  };
 
   const setCustomInitialValue = (event) => {
     let customInitialValue = parseInt(event.target.value);
