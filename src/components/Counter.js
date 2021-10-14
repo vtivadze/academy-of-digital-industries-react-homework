@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useState } from "react";
 
 export const Counter = ({initialValue, initialStep}) => {
@@ -101,4 +102,14 @@ export const Counter = ({initialValue, initialStep}) => {
       </div>
     </div>
   );
+};
+
+Counter.defaultProps = {
+  initialValue: 0,
+  initialStep: 1,
+};
+
+Counter.propTypes = {
+  initialValue: PropTypes.number.isRequired,
+  initialStep: PropTypes.number.isRequired,
 };
