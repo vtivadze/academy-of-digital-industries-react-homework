@@ -70,23 +70,34 @@ export const Counter = ({initialValue, initialStep}) => {
       >
         { count }
       </div>
-      <div className="buttons is-justify-content-space-between counter-manager">
-        <button
-          className="button is-success has-text-weight-bold"
-          onClick={ addNumber }
-        >
-          + { startingStep }
-        </button>
-        <button
-          className="button is-warning has-text-weight-bold"
-          onClick={ reset }
-        >Reset</button>
-        <button
-          className="button is-danger has-text-weight-bold"
-          onClick={ subNumber }
-        >
-          - { startingStep }
-        </button>
+
+      <div className="buttons tile is-parent is-justify-content-space-between counter-manager">
+        <div className="tile is-6 is-child pr-1">
+          <button
+            className="button is-fullwidth is-success has-text-weight-bold"
+            onClick={ addNumber }
+          >
+            + { startingStep }
+          </button>
+        </div>
+        
+        <div className="tile is-6 is-child pl-1">
+          <button
+            className="button is-fullwidth is-danger has-text-weight-bold"
+            onClick={ subNumber }
+          >
+            - { startingStep }
+          </button>
+        </div>
+
+        <div className="tile is-12 is-child">
+          <button
+            className="button is-fullwidth is-warning has-text-weight-bold"
+            onClick={ reset }
+          >
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   );
