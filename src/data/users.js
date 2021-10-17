@@ -1,3 +1,5 @@
+import { getRandomInteger } from "../helpers/functions";
+
 export const users = [
   ["Leo", "Tolstoy", 25],
   ["William", "Shakespeare", 26],
