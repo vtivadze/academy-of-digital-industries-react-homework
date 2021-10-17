@@ -28,5 +28,5 @@ export const users = [
   ["Artur", "Conan Doyle", getRandomInteger()],
   ["Jonathan", "Swift", getRandomInteger()],
   ["Jules", "Verne", getRandomInteger()],
-  ["Aleksandr", "Pushkin", getRandomInteger()],
+  ["Aleksandr", "Barnov", getRandomInteger()],
 ];
