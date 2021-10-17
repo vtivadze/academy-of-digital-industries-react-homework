@@ -1,4 +1,5 @@
 import { Logo } from "../components";
+import { Login } from "./Login";
 import { MainMenu } from "./MainMenu";
 
 export const Header = props => {
@@ -7,7 +8,9 @@ export const Header = props => {
       <Logo />
       <MainMenu
         items={props.mainMenuItems}
-        handleClick={props.handleClick} />
+        handleClick={props.handleClick}
+      />
+      <Login />
     </header>
   );
 }

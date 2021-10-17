@@ -5,6 +5,11 @@
   background-color: #46211a;
 }
 
+.main-menu__item {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .main-menu__item-link {
   background-color: #a43820;
   color: #46211a;
