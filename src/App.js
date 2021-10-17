@@ -29,7 +29,6 @@ class App extends React.Component {
       }),
       mainContent: state[menuName][i].name,
    }));
-
   }
 
   customButtonClickHandler(itemName) {
