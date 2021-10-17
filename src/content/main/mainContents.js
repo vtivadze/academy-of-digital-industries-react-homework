@@ -1,7 +1,17 @@
-import { MainContent, CounterContent, UsersContent } from "../index";
+import {
+  MainContent,
+  CounterContent,
+  UsersContent,
+  LoginFormContent,
+  SignupFormContent,
+  ForgotPasswordFormContent
+} from "../index";
 
 export const mainContents = {
   Main: <MainContent />,
   Counter: <CounterContent />,
-  Users: <UsersContent />
+  Users: <UsersContent />,
+  LoginForm: <LoginFormContent />,
+  SignupForm: <SignupFormContent />,
+  ForgotPasswordForm: <ForgotPasswordFormContent />,
 };
