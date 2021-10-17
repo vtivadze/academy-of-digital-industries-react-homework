@@ -2,7 +2,6 @@ import React from "react";
 
 import { Header, Main, Footer, Sidebar } from "./layout";
 import { mainMenuItems, sidebarMenuItems } from "./api";
-import { mainContents } from "./content";
 
 import "./App.css";
 
@@ -13,24 +12,29 @@ class App extends React.Component {
     this.state = {
       mainMenuItems,
       sidebarMenuItems,
-      mainContent: mainContents.Main,
+      mainContent: "Main",
     }
 
     this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
+    this.customButtonClickHandler = this.customButtonClickHandler.bind(this);
   }
 
   menuItemsHandleClick(i, className) {
-    const menuName = className.replace('-menu__item', '');
-    const items = this.state[`${menuName}MenuItems`];
+    const menuName = className.replace('-menu__item', '') + "MenuItems";
 
-    this.setState({
-      items: items.map((item, index) => {
+    this.setState((state) => ({
+      menuName: state[menuName].map((item, index) => {
         item.isActive = i === index;
         return item;
       }),
-      mainContent: mainContents[`${items[i].name}`],
-   });
+      mainContent: state[menuName][i].name,
+   }));
+
   }
+
+  customButtonClickHandler(itemName) {
+    this.setState({mainContent: itemName});
+  };
 
   render() {
     const mainMenuItems = this.state.mainMenuItems;
@@ -43,6 +47,7 @@ class App extends React.Component {
           <Header
             mainMenuItems={mainMenuItems}
             handleClick={this.menuItemsHandleClick}
+            customButtonClickHandler={this.customButtonClickHandler}
           />
         </div>
         <div className="container column">
@@ -51,7 +56,10 @@ class App extends React.Component {
               sidebarMenuItems={sidebarMenuItems}
               handleClick={this.menuItemsHandleClick}
             />
-            <Main content={mainContent} />
+            <Main
+              content={mainContent}
+              customButtonClickHandler={this.customButtonClickHandler}
+            />
           </div>
         </div>
         <div className="container">

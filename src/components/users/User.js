@@ -3,7 +3,7 @@ import { formatUser } from "../../helpers";
 
 export const User = props => {
   const user = props.item;
-  console.log(props.id);
+  
   return (
     <article className="user tile is-3 is-vertical">
       <div className="box m-2">

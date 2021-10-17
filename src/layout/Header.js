@@ -10,7 +10,9 @@ export const Header = props => {
         items={props.mainMenuItems}
         handleClick={props.handleClick}
       />
-      <Login />
+      <Login
+        customButtonClickHandler={props.customButtonClickHandler}
+      />
     </header>
   );
 }

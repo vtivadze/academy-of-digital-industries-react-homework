@@ -1,4 +1,4 @@
-export const LoginForm = (props) => {
+export const ForgotPasswordForm = (props) => {
   return (
     <form className="box column is-half is-offset-one-quarter mt-6">
       <div className="field">
