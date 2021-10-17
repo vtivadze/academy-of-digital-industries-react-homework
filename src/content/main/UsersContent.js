@@ -1,7 +1,8 @@
-import { User } from "../../components";
+import { users } from "../../api";
+import { UsersList } from "../../components/users";
 
 export const UsersContent = () => {
   return (
-    <User />
+    <UsersList data={ users }/>
   );
 };
