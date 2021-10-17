@@ -3,6 +3,8 @@ import { UsersList } from "../../components/users";
 
 export const UsersContent = () => {
   return (
-    <UsersList data={ users }/>
+    <div className="tile is-parent is-flex-wrap-wrap">
+      <UsersList data={ users }/>
+    </div>
   );
 };

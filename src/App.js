@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       mainMenuItems,
       sidebarMenuItems,
-      mainContent: mainContents.Users,
+      mainContent: mainContents.Main,
     }
 
     this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
