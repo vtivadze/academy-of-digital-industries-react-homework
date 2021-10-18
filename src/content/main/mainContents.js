@@ -4,7 +4,8 @@ import {
   UsersContent,
   LoginFormContent,
   SignupFormContent,
-  ForgotPasswordFormContent
+  CheckEmailFormContent,
+  NewPasswordFormContent
 } from "../index";
 
 export const mainContents = {
@@ -13,5 +14,6 @@ export const mainContents = {
   Users: <UsersContent />,
   LoginForm: <LoginFormContent />,
   SignupForm: <SignupFormContent />,
-  ForgotPasswordForm: <ForgotPasswordFormContent />,
+  CheckEmailForm: <CheckEmailFormContent />,
+  NewPasswordForm: <NewPasswordFormContent />,
 };
