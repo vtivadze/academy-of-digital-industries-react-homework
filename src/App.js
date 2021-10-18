@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       mainMenuItems,
       sidebarMenuItems,
-      mainContent: "NewPasswordForm",
+      mainContent: "SignupForm",
     }
 
     this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
