@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { List } from "../components/menu";
-import { MainMenuItem } from "../modules";
+import { MainMenuItem } from "../models";
 
 export const MainMenu = props => {
   const items = props.items;

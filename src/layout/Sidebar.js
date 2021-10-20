@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { SidebarMenu } from ".";
-import { SidebarMenuItem } from "../modules";
+import { SidebarMenuItem } from "../models";
 
 export const Sidebar = props => {
   console.log(props.sidebarMenuItems);

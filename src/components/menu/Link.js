@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link as LinkItem } from "../../modules";
+import { Link as LinkItem } from "../../models";
 
 export const Link = (props) => {
   const {name, href, className} = props.link;

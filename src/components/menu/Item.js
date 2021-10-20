@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link as ItemLink, MenuItem } from "../../modules";
+import { Link as ItemLink, MenuItem } from "../../models";
 import { Link } from "./Link";
 
 export const Item = props => {

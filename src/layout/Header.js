@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Logo } from "../components";
-import { MainMenuItem } from "../modules";
+import { MainMenuItem } from "../models";
 import { Login } from "./Login";
 import { MainMenu } from "./MainMenu";
 

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { formatUser } from "../../helpers";
-import { User as UserModule } from "../../modules";
+import { User as UserModel } from "../../models";
 
 
 export const User = props => {
@@ -31,9 +31,9 @@ export const User = props => {
 };
 
 User.defaultProps = {
-  item: new UserModule(["Guest", "Guest", null]),
+  item: new UserModel(["Guest", "Guest", null]),
 }
 
 User.propTypes = {
-  item: PropTypes.instanceOf(UserModule).isRequired,
+  item: PropTypes.instanceOf(UserModel).isRequired,
 }

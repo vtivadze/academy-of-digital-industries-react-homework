@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { MenuItem } from '../../modules';
+import { MenuItem } from '../../models';
 import { Item } from "./Item";
 
 export const List = props => {

@@ -1,4 +1,4 @@
-import { MenuItem } from "./menuItem.module";
+import { MenuItem } from "./menuItem.model";
 
 export class MainMenuItem extends MenuItem {
   constructor(item) {

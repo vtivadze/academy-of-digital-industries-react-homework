@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { List } from "../components/menu";
-import { SidebarMenuItem } from "../modules";
+import { SidebarMenuItem } from "../models";
 
 export const SidebarMenu = props =>  {
   const items = props.items;

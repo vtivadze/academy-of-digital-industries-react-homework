@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { User } from "./User";
-import { User as UserModel } from "../../modules";
+import { User as UserModel } from "../../models";
 
 export const UsersList = (props) => {
   return (
