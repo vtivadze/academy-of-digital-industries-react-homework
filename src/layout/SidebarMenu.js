@@ -5,7 +5,6 @@ import { SidebarMenuItem } from "../models";
 
 export const SidebarMenu = props =>  {
   const items = props.items;
-  console.log("items: ", items);
   
   return (
     <div className="sidebar-menu">

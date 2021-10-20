@@ -5,7 +5,7 @@ import { Login } from "./Login";
 import { MainMenu } from "./MainMenu";
 
 export const Header = props => {
-  console.log(typeof props.handleClick);
+
   return (
     <header className="app-header section py-5 px-6 tile is-justify-content-space-between">
       <Logo />

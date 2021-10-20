@@ -3,7 +3,7 @@ import { SidebarMenu } from ".";
 import { SidebarMenuItem } from "../models";
 
 export const Sidebar = props => {
-  console.log(props.sidebarMenuItems);
+
   return (
     <aside className="app-sidebar column is-2 is-justify-content-center  p-3">
       <SidebarMenu
