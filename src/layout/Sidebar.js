@@ -1,6 +1,9 @@
+import PropTypes from "prop-types";
 import { SidebarMenu } from ".";
+import { SidebarMenuItem } from "../modules";
 
 export const Sidebar = props => {
+  console.log(props.sidebarMenuItems);
   return (
     <aside className="app-sidebar column is-2 is-justify-content-center  p-3">
       <SidebarMenu
@@ -10,3 +13,11 @@ export const Sidebar = props => {
     </aside>
   );
 }
+
+Sidebar.defaultProps = {
+  sidebarMenuItems: [new SidebarMenuItem(["item", "#", false, "sidebar-menu__item"])],
+};
+
+Sidebar.propTypes = {
+  Sidebar: PropTypes.array.isRequired,
+};

@@ -1,4 +1,4 @@
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import { User } from "./User";
 import { User as UserModel } from "../../modules";
 
@@ -17,5 +17,5 @@ UsersList.defaultProps = {
 };
 
 UsersList.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
 };

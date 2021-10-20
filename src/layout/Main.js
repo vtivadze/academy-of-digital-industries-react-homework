@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { mainContents } from "../content";
 
@@ -10,3 +11,11 @@ export const Main = (props) => {
     </main>
   );
 }
+
+Main.defaultProps = {
+  content: "Main",
+}
+
+Main.propTypes = {
+  content: PropTypes.string.isRequired,
+};
