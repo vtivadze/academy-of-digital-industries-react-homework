@@ -1,4 +1,6 @@
+import { PropTypes } from 'prop-types';
 import { User } from "./User";
+import { User as UserModel } from "../../modules";
 
 export const UsersList = (props) => {
   return (
@@ -8,4 +10,12 @@ export const UsersList = (props) => {
       );
     })
   );
+};
+
+UsersList.defaultProps = {
+  data: [new UserModel(["Guest", "Guest", null])],
+};
+
+UsersList.propTypes = {
+  data: PropTypes.array,
 };
