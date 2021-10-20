@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link as ItemLink, MenuItem } from "../../models";
 import { Link } from "./Link";
 
@@ -24,7 +24,7 @@ export const Item = props => {
 }
 
 Item.defaultProps = {
-  item: new MenuItem('item', '#', false, 'menu__item'),
+  item: new MenuItem("item", "#", false, "menu__item"),
 };
 
 Item.propTypes = {

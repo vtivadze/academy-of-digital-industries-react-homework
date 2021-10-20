@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Logo } from "../components";
 import { MainMenuItem } from "../models";
 import { Login } from "./Login";
@@ -21,7 +21,7 @@ export const Header = props => {
 }
 
 Header.defaultProps = {
-  mainMenuItems: [new MainMenuItem(['item', '#', false])],
+  mainMenuItems: [new MainMenuItem(["item", "#", false])],
 };
 
 Header.propTypes = {

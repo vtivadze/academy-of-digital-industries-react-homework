@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { User } from "./User";
 import { User as UserModel } from "../../models";
 

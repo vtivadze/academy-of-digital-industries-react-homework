@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   menuItemsHandleClick(i, className) {
-    const menuName = className.replace('-menu__item', '') + "MenuItems";
+    const menuName = className.replace("-menu__item", "") + "MenuItems";
 
     this.setState((state) => ({
       menuName: state[menuName].map((item, index) => {

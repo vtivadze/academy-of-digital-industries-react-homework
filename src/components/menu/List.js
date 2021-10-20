@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { MenuItem } from '../../models';
+import PropTypes from "prop-types";
+import { MenuItem } from "../../models";
 import { Item } from "./Item";
 
 export const List = props => {
@@ -18,7 +18,7 @@ export const List = props => {
 }
 
 List.defaultProps = {
-  items: [new MenuItem('item', '#', false, 'menu__item')],
+  items: [new MenuItem("item", "#", false, "menu__item")],
 };
 
 List.propTypes = {

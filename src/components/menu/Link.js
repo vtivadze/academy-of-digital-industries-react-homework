@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link as LinkItem } from "../../models";
 
 export const Link = (props) => {
@@ -16,7 +16,7 @@ export const Link = (props) => {
 }
 
 Link.defaultProps = {
-  link: new LinkItem('item', '#', 'menu__item'),
+  link: new LinkItem("item", "#", "menu__item"),
 };
 
 Link.propTypes = {
