@@ -25,5 +25,5 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-  mainMenuItems: PropTypes.array.isRequired,
+  mainMenuItems: PropTypes.arrayOf(MainMenuItem).isRequired,
 };

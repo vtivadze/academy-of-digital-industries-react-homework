@@ -17,5 +17,5 @@ UsersList.defaultProps = {
 };
 
 UsersList.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(UserModel).isRequired,
 };

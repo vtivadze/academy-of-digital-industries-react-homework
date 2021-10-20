@@ -19,5 +19,5 @@ Sidebar.defaultProps = {
 };
 
 Sidebar.propTypes = {
-  Sidebar: PropTypes.array.isRequired,
+  Sidebar: PropTypes.arrayOf(SidebarMenuItem).isRequired,
 };

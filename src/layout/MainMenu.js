@@ -22,5 +22,5 @@ MainMenu.defaultProps = {
 };
 
 MainMenu.propTypes = {
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(MainMenuItem).isRequired,
 };
