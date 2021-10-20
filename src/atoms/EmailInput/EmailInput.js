@@ -9,16 +9,20 @@ export const EmailInput = () => {
   const [emailError, setEmailError] = useState(false);
 
   useEffect(() => {
-    if (
-        (email && !email.match(EMAIL_PATTERN)) ||
-        (email && email.length < EMAIL_MIN_LENGTH) ||
-        (email && email.length > EMAIL_MAX_LENGTH)
+    if (email &&
+        (
+          !email.match(EMAIL_PATTERN) ||
+          email.length < EMAIL_MIN_LENGTH ||
+          email.length > EMAIL_MAX_LENGTH
+        )
     ) {
       setEmailError(true);
-    } else if (
-      (email && email.match(EMAIL_PATTERN)) ||
-      (email && email.length >= EMAIL_MIN_LENGTH) ||
-      (email && email.length <= EMAIL_MAX_LENGTH)
+    } else if (email &&
+      (
+        email.match(EMAIL_PATTERN) ||
+        email.length >= EMAIL_MIN_LENGTH ||
+        email.length <= EMAIL_MAX_LENGTH
+        )
     ) {
       setEmailError(false);
     }
