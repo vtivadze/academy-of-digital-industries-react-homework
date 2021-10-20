@@ -1,14 +1,25 @@
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
+import { PASSWORD_MIN_LENGTH } from "../../constants/validation";
+import { PASSWORD_MAX_LENGTH } from "../../constants/validation";
 
 export const PasswordInput = () => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
 
   useEffect(() => {
-    if (password && password.length < 6) {
+    if (password &&
+      (
+        password.length < PASSWORD_MIN_LENGTH ||
+        password.length > PASSWORD_MAX_LENGTH
+      )
+    ) {
       setPasswordError(true);
-    } else if (password && password.length >= 6) {
+    } else if (
+        password &&
+        password.length >= PASSWORD_MIN_LENGTH &&
+        password.length <= PASSWORD_MAX_LENGTH
+      ) {
       setPasswordError(false);
     }
   }, [password]);

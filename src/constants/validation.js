@@ -6,4 +6,5 @@ export const NAME_MIN_LENGTH = 2;
 export const NAME_MAX_LENGTH = 20;
 export const NAME_PATTERN = /^[a-z]{2,20}\s+[a-z]{2,30}$/im;
 
-export const MIN_PASSWORD_VALUE = 6;
+export const PASSWORD_MIN_LENGTH = 10;
+export const PASSWORD_MAX_LENGTH = 20;
