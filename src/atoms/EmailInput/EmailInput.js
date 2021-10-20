@@ -17,12 +17,11 @@ export const EmailInput = () => {
         )
     ) {
       setEmailError(true);
-    } else if (email &&
-      (
-        email.match(EMAIL_PATTERN) ||
-        email.length >= EMAIL_MIN_LENGTH ||
+    } else if (
+        email &&
+        email.match(EMAIL_PATTERN) &&
+        email.length >= EMAIL_MIN_LENGTH &&
         email.length <= EMAIL_MAX_LENGTH
-        )
     ) {
       setEmailError(false);
     }
