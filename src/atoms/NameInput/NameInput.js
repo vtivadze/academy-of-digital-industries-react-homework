@@ -1,16 +1,28 @@
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
+import { NAME_PATTERN } from "../../constants/validation";
+import { NAME_MIN_LENGTH } from "../../constants/validation";
+import { NAME_MAX_LENGTH } from "../../constants/validation";
 
 export const NameInput = () => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
 
   useEffect(() => {
-    const namePattern = /^[a-z]{2,20}\s+[a-z]{2,30}$/im;
-
-    if (name && !name.match(namePattern)) {
+    if (name &&
+        (
+          !name.match(NAME_PATTERN) ||
+          name.length < NAME_MIN_LENGTH ||
+          name.length > NAME_MAX_LENGTH
+        )
+    ) {
       setNameError(true);
-    } else if (name && name.match(namePattern)) {
+    } else if (
+        name &&
+        name.match(NAME_PATTERN) &&
+        name.length >= NAME_MIN_LENGTH &&
+        name.length <= NAME_MAX_LENGTH
+    ) {
       setNameError(false);
     }
   }, [name]);
