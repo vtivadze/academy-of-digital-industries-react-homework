@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
+import { MIN_EMAIL_VALUE } from "../../constants/validation";
+import { EMAIL_PATTERN } from "../../constants/validation";
 
 export const EmailInput = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
 
   useEffect(() => {
-    const emailPattern = /^[a-z]+[0-9]*[a-z]*@[a-z]{2,}\.[a-z]{2,3}$/im;
-
     if (
-        (email && !email.match(emailPattern)) ||
-        (email && email.length < 20) 
+        (email && !email.match(EMAIL_PATTERN)) ||
+        (email && email.length < MIN_EMAIL_VALUE) 
     ) {
       setEmailError(true);
     } else if (
-      (email && email.match(emailPattern)) ||
-      (email && email.length >= 20)
+      (email && email.match(EMAIL_PATTERN)) ||
+      (email && email.length >= MIN_EMAIL_VALUE)
     ) {
       setEmailError(false);
     }
