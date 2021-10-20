@@ -1,7 +1,7 @@
 import { PasswordInput } from "../../atoms/PasswordInput";
 import { PasswordRepeatInput } from "../../atoms/PasswordRepeatInput";
 
-export const NewPasswordForm = (props) => {
+export const NewPasswordForm = () => {
   const onSubmit = event => event.preventDefault();
 
   return (
