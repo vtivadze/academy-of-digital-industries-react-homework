@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
-import { MIN_EMAIL_VALUE } from "../../constants/validation";
+import { EMAIL_MIN_LENGTH } from "../../constants/validation";
+import { EMAIL_MAX_LENGTH } from "../../constants/validation";
 import { EMAIL_PATTERN } from "../../constants/validation";
 
 export const EmailInput = () => {
@@ -10,12 +11,14 @@ export const EmailInput = () => {
   useEffect(() => {
     if (
         (email && !email.match(EMAIL_PATTERN)) ||
-        (email && email.length < MIN_EMAIL_VALUE) 
+        (email && email.length < EMAIL_MIN_LENGTH) ||
+        (email && email.length > EMAIL_MAX_LENGTH)
     ) {
       setEmailError(true);
     } else if (
       (email && email.match(EMAIL_PATTERN)) ||
-      (email && email.length >= MIN_EMAIL_VALUE)
+      (email && email.length >= EMAIL_MIN_LENGTH) ||
+      (email && email.length <= EMAIL_MAX_LENGTH)
     ) {
       setEmailError(false);
     }
