@@ -22,6 +22,7 @@ export const UsernameInput = () => {
         value={ userName }
         autoComplete="username"
         placeholder="Username"
+        required
         onChange={ ({target}) => setUserName(target.value) }
       />
       <span className="icon is-small is-left">

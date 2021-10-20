@@ -23,6 +23,7 @@ export const NameInput = () => {
         name="name"
         value={name}
         placeholder="Firstname LastName"
+        required
         onChange={({target}) => setName(target.value)}
       />
 

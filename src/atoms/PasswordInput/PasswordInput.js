@@ -22,6 +22,7 @@ export const PasswordInput = () => {
         type="password"
         placeholder="Password"
         autoComplete="current-password"
+        required
         onChange={({target}) => setPassword(target.value)}
       />
 

@@ -23,6 +23,7 @@ export const PasswordRepeatInput = () => {
         value={ passwordRepeat }
         autoComplete="new-password"
         placeholder="Repeat password"
+        required
         onChange={ ({target}) => setPasswordRepeat(target.value) }
       />
       <span className="icon is-small is-left">

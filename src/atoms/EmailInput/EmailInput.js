@@ -24,6 +24,7 @@ export const EmailInput = () => {
         type="email"
         placeholder="Email"
         autoComplete="email"
+        required
         onChange={({target}) => setEmail(target.value) }
       />
 
