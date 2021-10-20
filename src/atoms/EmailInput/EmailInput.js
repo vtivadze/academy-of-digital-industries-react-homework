@@ -8,9 +8,15 @@ export const EmailInput = () => {
   useEffect(() => {
     const emailPattern = /^[a-z]+[0-9]*[a-z]*@[a-z]{2,}\.[a-z]{2,3}$/im;
 
-    if (email && !email.match(emailPattern)) {
+    if (
+        (email && !email.match(emailPattern)) ||
+        (email && email.length < 20) 
+    ) {
       setEmailError(true);
-    } else if (email && email.match(emailPattern)) {
+    } else if (
+      (email && email.match(emailPattern)) ||
+      (email && email.length >= 20)
+    ) {
       setEmailError(false);
     }
   }, [email]);
