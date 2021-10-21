@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
 import { PASSWORD_MIN_LENGTH } from "../../constants/validation";
 import { PASSWORD_MAX_LENGTH } from "../../constants/validation";
 
-export const PasswordInput = () => {
+export const PasswordInput = ({ name = "password"} ) => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
 
@@ -28,7 +29,7 @@ export const PasswordInput = () => {
     <div className="control has-icons-left has-icons-right">
       <input
         className={getFormInputClassName(passwordError, password)}
-        name="password"
+        name= { name }
         value={password}
         type="password"
         placeholder="Password"
@@ -54,3 +55,11 @@ export const PasswordInput = () => {
     </div>
   );
 };
+
+PasswordInput.defaultProps = {
+  name: "password",
+};
+
+PasswordInput.propTypes = {
+  name: PropTypes.string.isRequired,
+}
