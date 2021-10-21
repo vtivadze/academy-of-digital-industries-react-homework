@@ -4,7 +4,15 @@ import { PasswordInput } from "../../atoms/PasswordInput/PasswordInput";
 export const LoginForm = () => {
   const onSubmit = event => {
     event.preventDefault();
-    
+
+    const loginData = {};
+    const fd = new FormData(event.target);
+
+    for (let [key, value] of fd.entries()) {
+      loginData[key] = value;
+    }
+
+    console.log(loginData);
     // const loginData = {
     //   email, password
     // };

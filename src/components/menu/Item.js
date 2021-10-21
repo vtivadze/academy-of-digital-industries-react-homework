@@ -24,9 +24,9 @@ export const Item = props => {
 }
 
 Item.defaultProps = {
-  item: new MenuItem("item", "#", false, "menu__item"),
+  item: new MenuItem(["item", "#", false]),
 };
 
 Item.propTypes = {
-  item: PropTypes.instanceOf(MenuItem).isRequired,
+  item: PropTypes.instanceOf (MenuItem).isRequired,
 };

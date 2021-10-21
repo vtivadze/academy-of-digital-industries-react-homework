@@ -21,9 +21,16 @@ export const Header = props => {
 }
 
 Header.defaultProps = {
-  mainMenuItems: [new MainMenuItem(["item", "#", false])],
+  mainMenuItems: [new MainMenuItem(["item", "#", false, "main-menu__item"])],
 };
 
 Header.propTypes = {
-  mainMenuItems: PropTypes.arrayOf(MainMenuItem).isRequired,
+  mainMenuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      isActive: PropTypes.bool.isRequired,
+      className: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

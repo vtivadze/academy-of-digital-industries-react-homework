@@ -18,9 +18,15 @@ export const List = props => {
 }
 
 List.defaultProps = {
-  items: [new MenuItem("item", "#", false, "menu__item")],
+  items: [new MenuItem("item", "#", false)],
 };
 
 List.propTypes = {
-  items: PropTypes.arrayOf(MenuItem).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      isActive: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 }
