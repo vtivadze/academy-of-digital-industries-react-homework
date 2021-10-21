@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
+import { USERNAME_PATTERN } from "../../constants/validation";
+import { USERNAME_MIN_LENGTH } from "../../constants/validation";
+import { USERNAME_MAX_LENGTH } from "../../constants/validation";
 
 export const UsernameInput = () => {
   const[userName, setUserName] = useState("");
   const[userNameError, setUserNameError] = useState(false);
 
   useEffect(() => {
-    if (userName && userName.length < 5) {
+    if (userName && 
+        (
+          !userName.match(USERNAME_PATTERN) ||
+          userName.length < USERNAME_MIN_LENGTH ||
+          userName.length > USERNAME_MAX_LENGTH
+        )
+    ) {
       setUserNameError(true);
-    } else if (userName && userName.length >= 5) {
+    } else if (
+      userName &&
+      userName.length >= USERNAME_MIN_LENGTH &&
+      userName.length <= USERNAME_MAX_LENGTH
+    ) {
       setUserNameError(false);
     }
   }, [userName]);
