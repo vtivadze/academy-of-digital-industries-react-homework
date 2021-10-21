@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
 import { EMAIL_MIN_LENGTH } from "../../constants/validation";
 import { EMAIL_MAX_LENGTH } from "../../constants/validation";
 import { EMAIL_PATTERN } from "../../constants/validation";
 
-export const EmailInput = () => {
+export const EmailInput = ({ name = "email" }) => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
 
@@ -31,7 +32,7 @@ export const EmailInput = () => {
     <div className="control has-icons-left has-icons-right">
       <input
         className={getFormInputClassName(emailError, email)}
-        name="email"
+        name={ name }
         value={email}
         type="email"
         placeholder="Email"
@@ -57,3 +58,11 @@ export const EmailInput = () => {
     </div>
   );
 };
+
+EmailInput.defaultProps = {
+  name: "email",
+}
+
+EmailInput.propTypes = {
+  name: PropTypes.string.isRequired,
+}
