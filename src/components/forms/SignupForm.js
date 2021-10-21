@@ -13,23 +13,23 @@ export const SignupForm = () => {
       onSubmit={ onSubmit }
     >
       <div className="field">
-        <NameInput />
+        <NameInput inputName="name" />
       </div>
 
       <div className="field">
-        <UsernameInput />
+        <UsernameInput name="username" />
       </div>
 
       <div className="field">
-        <EmailInput />
+        <EmailInput name="email" />
       </div>
 
       <div className="field">
-        <PasswordInput />
+        <PasswordInput name="password" />
       </div>
         
       <div className="field">
-        <PasswordRepeatInput />
+        <PasswordRepeatInput name="passwordRepeat" />
       </div>
 
       <div className="field">

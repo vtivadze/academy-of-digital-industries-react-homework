@@ -9,7 +9,7 @@ export const CheckEmailForm = () => {
       onSubmit={ onSubmit }
     >
       <div className="field">
-        <EmailInput />
+        <EmailInput name="email" />
       </div>
 
       <div className="field tile is-justify-content-space-between">
