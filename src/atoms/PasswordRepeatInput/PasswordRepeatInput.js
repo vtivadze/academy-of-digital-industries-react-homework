@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
 import { PASSWORD_MIN_LENGTH } from "../../constants/validation";
 import { PASSWORD_MAX_LENGTH } from "../../constants/validation";
 
-export const PasswordRepeatInput = () => {
+export const PasswordRepeatInput = ({ name = "passwordRepeat" }) => {
   const [passwordRepeat, setPasswordRepeat] = useState("");
   const [passwordRepeatError, setPasswordRepeatError] = useState(false);
 
@@ -29,7 +30,7 @@ export const PasswordRepeatInput = () => {
       <input
         className={ getFormInputClassName(passwordRepeatError, passwordRepeat) }
         type="password"
-        name="passwordRepeat"
+        name={ name }
         value={ passwordRepeat }
         autoComplete="new-password"
         placeholder="Repeat password"
@@ -53,3 +54,12 @@ export const PasswordRepeatInput = () => {
     </div>
   );
 };
+
+PasswordRepeatInput.defaultProps = {
+  name: "passwordRepeat",
+};
+
+PasswordRepeatInput.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
