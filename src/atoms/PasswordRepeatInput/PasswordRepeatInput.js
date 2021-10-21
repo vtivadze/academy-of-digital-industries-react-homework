@@ -4,7 +4,7 @@ import { getFormInputClassName } from "../../helpers";
 import { PASSWORD_MIN_LENGTH } from "../../constants/validation";
 import { PASSWORD_MAX_LENGTH } from "../../constants/validation";
 
-export const PasswordRepeatInput = ({ name = "passwordRepeat" }) => {
+export const PasswordRepeatInput = ({ inputName = "passwordRepeat" }) => {
   const [passwordRepeat, setPasswordRepeat] = useState("");
   const [passwordRepeatError, setPasswordRepeatError] = useState(false);
 
@@ -30,7 +30,7 @@ export const PasswordRepeatInput = ({ name = "passwordRepeat" }) => {
       <input
         className={ getFormInputClassName(passwordRepeatError, passwordRepeat) }
         type="password"
-        name={ name }
+        name={ inputName }
         value={ passwordRepeat }
         autoComplete="new-password"
         placeholder="Repeat password"
@@ -56,10 +56,10 @@ export const PasswordRepeatInput = ({ name = "passwordRepeat" }) => {
 };
 
 PasswordRepeatInput.defaultProps = {
-  name: "passwordRepeat",
+  inputName: "passwordRepeat",
 };
 
 PasswordRepeatInput.propTypes = {
-  name: PropTypes.string.isRequired,
+  inputName: PropTypes.string.isRequired,
 };
 

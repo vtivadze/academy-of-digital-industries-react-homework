@@ -17,19 +17,19 @@ export const SignupForm = () => {
       </div>
 
       <div className="field">
-        <UsernameInput name="username" />
+        <UsernameInput iniputName="username" />
       </div>
 
       <div className="field">
-        <EmailInput name="email" />
+        <EmailInput iniputName="email" />
       </div>
 
       <div className="field">
-        <PasswordInput name="password" />
+        <PasswordInput iniputName="password" />
       </div>
         
       <div className="field">
-        <PasswordRepeatInput name="passwordRepeat" />
+        <PasswordRepeatInput iniputName="passwordRepeat" />
       </div>
 
       <div className="field">

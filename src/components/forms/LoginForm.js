@@ -24,11 +24,11 @@ export const LoginForm = () => {
       onSubmit={onSubmit}  
     >
       <div className="field">
-        <EmailInput name="email" />
+        <EmailInput inputName="email" />
       </div>
 
       <div className="field">
-        <PasswordInput name="password" />
+        <PasswordInput inputName="password" />
       </div>
 
       <div className="field tile is-justify-content-space-between">

@@ -5,7 +5,7 @@ import { USERNAME_PATTERN } from "../../constants/validation";
 import { USERNAME_MIN_LENGTH } from "../../constants/validation";
 import { USERNAME_MAX_LENGTH } from "../../constants/validation";
 
-export const UsernameInput = ({ name="username" }) => {
+export const UsernameInput = ({ inputName="username" }) => {
   const[userName, setUserName] = useState("");
   const[userNameError, setUserNameError] = useState(false);
 
@@ -32,7 +32,7 @@ export const UsernameInput = ({ name="username" }) => {
       <input
         className={ getFormInputClassName(userNameError, userName) }
         type="text"
-        name={ name }
+        name={ inputName }
         value={ userName }
         autoComplete="username"
         placeholder="Username"
@@ -63,9 +63,9 @@ export const UsernameInput = ({ name="username" }) => {
 };
 
 UsernameInput.defaultProps = {
-  name: "username",
+  inputName: "username",
 };
 
 UsernameInput.propTypes = {
-  name: PropTypes.string.isRequired,
+  inputName: PropTypes.string.isRequired,
 }

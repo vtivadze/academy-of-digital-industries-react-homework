@@ -10,11 +10,11 @@ export const NewPasswordForm = () => {
       onSubmit={ onSubmit }
     >
       <div className="field">
-        <PasswordInput name="password" />
+        <PasswordInput inputName="password" />
       </div>
 
       <div className="field">
-        <PasswordRepeatInput name="passwordRepeat" />
+        <PasswordRepeatInput inputName="passwordRepeat" />
       </div>
 
       <div className="field">
