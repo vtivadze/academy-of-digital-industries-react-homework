@@ -5,11 +5,11 @@ import { NAME_PATTERN } from "../../constants/validation";
 import { NAME_MIN_LENGTH } from "../../constants/validation";
 import { NAME_MAX_LENGTH } from "../../constants/validation";
 
-export const NameInput = () => {
+export const NameInput = ({ inputName="name" }) => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
 
-  useEffect(({ name = "name"} ) => {
+  useEffect(() => {
     if (name &&
         (
           !name.match(NAME_PATTERN) ||
@@ -33,7 +33,7 @@ export const NameInput = () => {
       <input
         className={ getFormInputClassName(nameError, name)}
         type="text"
-        name={ name }
+        name={ inputName }
         value={name}
         placeholder="Firstname LastName"
         required
@@ -56,9 +56,9 @@ export const NameInput = () => {
 };
 
 NameInput.defaultProps = {
-  name: "name",
+  inputName: "name",
 };
 
 NameInput.propsType = {
-  name: PropsType.string.isRequired,
+  inputName: PropsType.string.isRequired,
 };
