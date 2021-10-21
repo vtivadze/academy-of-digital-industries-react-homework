@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
 import { USERNAME_PATTERN } from "../../constants/validation";
 import { USERNAME_MIN_LENGTH } from "../../constants/validation";
 import { USERNAME_MAX_LENGTH } from "../../constants/validation";
 
-export const UsernameInput = () => {
+export const UsernameInput = ({ name="username" }) => {
   const[userName, setUserName] = useState("");
   const[userNameError, setUserNameError] = useState(false);
 
@@ -31,7 +32,7 @@ export const UsernameInput = () => {
       <input
         className={ getFormInputClassName(userNameError, userName) }
         type="text"
-        name="username"
+        name={ name }
         value={ userName }
         autoComplete="username"
         placeholder="Username"
@@ -60,3 +61,11 @@ export const UsernameInput = () => {
     </div>
   );
 };
+
+UsernameInput.defaultProps = {
+  name: "username",
+};
+
+UsernameInput.propTypes = {
+  name: PropTypes.string.isRequired,
+}
