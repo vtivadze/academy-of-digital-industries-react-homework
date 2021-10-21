@@ -1,3 +1,4 @@
+import PropsType from 'prop-types';
 import { useState, useEffect } from "react";
 import { getFormInputClassName } from "../../helpers";
 import { NAME_PATTERN } from "../../constants/validation";
@@ -8,7 +9,7 @@ export const NameInput = () => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
 
-  useEffect(() => {
+  useEffect(({ name = "name"} ) => {
     if (name &&
         (
           !name.match(NAME_PATTERN) ||
@@ -32,7 +33,7 @@ export const NameInput = () => {
       <input
         className={ getFormInputClassName(nameError, name)}
         type="text"
-        name="name"
+        name={ name }
         value={name}
         placeholder="Firstname LastName"
         required
@@ -52,4 +53,12 @@ export const NameInput = () => {
       }
     </div>
   );
+};
+
+NameInput.defaultProps = {
+  name: "name",
+};
+
+NameInput.propsType = {
+  name: PropsType.string.isRequired,
 };
