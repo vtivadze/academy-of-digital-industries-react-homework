@@ -1,6 +1,6 @@
 export const mainMenuItems = [
-  ["Main", "#",true],
-  ["About", "#",false],
-  ["Services", "#",false],
-  ["Staff", "#",false],
+  ["Main", "/",true],
+  ["About", "/about",false],
+  ["Services", "/services",false],
+  ["Staff", "/staff",false],
 ];
