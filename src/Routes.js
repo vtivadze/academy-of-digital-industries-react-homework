@@ -20,11 +20,11 @@ export function Routes(props) {
     </Route>
 
     <Route path="/login" exact>
-      <MainLayout page="LoginForm" />
+      <MainLayout page="Login" />
     </Route>
 
     <Route path="/signup" exact>
-      <MainLayout page="SignupForm" />
+      <MainLayout page="Signup" />
     </Route>
 
     <Route path="/counter" exact>
