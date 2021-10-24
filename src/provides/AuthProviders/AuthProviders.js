@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AUTH_TOKEN } from "../../constants/constants";
 import { itemExists, removeItem } from "../../helpers/localStorage";
 
-const AuthContext = React.createContext(null);
+export const AuthContext = React.createContext(null);
 AuthContext.displayName = "AuthContext";
 
 export const AuthProvider = ({children}) => {
