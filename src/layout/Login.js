@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { LOGIN_PATH, REGISTER_PATH } from "../constants/routes";
-import { AuthContext } from "../providers/AuthProvider";
+import { useAuthContext } from "../providers/AuthProvider";
 
 export const Login = () => {
-  const { loggedIn, logOut } = useContext(AuthContext);
+  const { loggedIn, logOut } = useAuthContext();
 
   const renderGuestLinks = () => {
     return (
