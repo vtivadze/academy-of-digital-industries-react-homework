@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 import { Main as MainLayout } from "./layout";
 import * as route from "./constants/routes";
+import { SecureComponent } from "./atoms/SecureComponent/SecureComponent";
 
 export function Routes(props) {
   return <Switch>
@@ -45,7 +46,9 @@ export function Routes(props) {
     </Route>
 
     <Route path={ route.PROFILE_PATH }>
-      <MainLayout page="Profile" />
+      <SecureComponent>
+        <MainLayout page="Profile" />
+      </SecureComponent>
     </Route>
   </Switch>;
 };
