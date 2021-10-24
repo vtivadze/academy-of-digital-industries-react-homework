@@ -2,6 +2,8 @@ import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { EmailInput, PasswordInput } from "../../atoms";
 import { CHECK_EMAIL_PATH, PROFILE_PATH } from "../../constants/routes";
+import { AUTH_TOKEN } from "../../constants/constants";
+import { saveItem } from "../../helpers/localStorage";
 
 export const LoginForm = () => {
   const history = useHistory();
@@ -30,6 +32,7 @@ export const LoginForm = () => {
       .then(res => res.json())
       .then(result => {
         if (result.token) {
+          saveItem(AUTH_TOKEN, result.token);
           history.replace(PROFILE_PATH)
         }
       })
