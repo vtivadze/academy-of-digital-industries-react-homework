@@ -8,8 +8,9 @@ export const Link = (props) => {
   return (
     <NavLink
       className={`${className}-link button is-size-4 is-block`}
-      to={href}
       title={name}
+      to={href}
+      activeClassName={`${className}-link--active`}
     >
       {name}
     </NavLink>

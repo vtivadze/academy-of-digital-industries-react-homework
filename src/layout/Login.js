@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { LOGIN_PATH, REGISTER_PATH } from "../constants/routes";
 export const Login = (props) => {
   const clickHandler = (itemName) => {
@@ -7,20 +7,22 @@ export const Login = (props) => {
 
   return (
     <div className="buttons is-flex-direction-column-reverse mb-0">
-      <Link
-        className="button is-primary mr-0 mb-0"
+      <NavLink
+        className="button is-info mr-0 mb-0"
         onClick={clickHandler.bind(null, "RegisterForm")}
         to={ REGISTER_PATH }
+        activeClassName="has-background-dark"
       >
         <strong>Register</strong>
-      </Link>
-      <Link
-        className="button is-light is-align-self-stretch mr-0"
+      </NavLink>
+      <NavLink
+        className="button is-info is-align-self-stretch mr-0"
         onClick={clickHandler.bind(null, "LoginForm")}
         to={ LOGIN_PATH }
+        activeClassName="has-background-dark"
       >
-        Log in
-      </Link>
+        <strong>Log in</strong>
+      </NavLink>
     </div>
   );
 };

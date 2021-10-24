@@ -20,7 +20,7 @@
   text-decoration: underline;
 }
 
-.main-menu__item--active .main-menu__item-link {
+.main-menu__item-link--active {
   color: #ffffff;
 }
 
@@ -43,7 +43,7 @@
   text-decoration: underline;
 }
 
-.sidebar-menu__item--active .sidebar-menu__item-link {
+.sidebar-menu__item-link--active {
   color: #ffffff;
 }
 
