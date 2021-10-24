@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { LOGIN_PATH, SIGNUP_PATH } from "../constants/routes";
 export const Login = (props) => {
   const clickHandler = (itemName) => {
     return props.customButtonClickHandler(itemName);
@@ -10,14 +10,14 @@ export const Login = (props) => {
       <Link
         className="button is-primary mr-0 mb-0"
         onClick={clickHandler.bind(null, "SignupForm")}
-        to="/signup"
+        to={ SIGNUP_PATH }
       >
         <strong>Sign up</strong>
       </Link>
       <Link
         className="button is-light is-align-self-stretch mr-0"
         onClick={clickHandler.bind(null, "LoginForm")}
-        to="/login"
+        to={ LOGIN_PATH }
       >
         Log in
       </Link>
