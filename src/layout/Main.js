@@ -1,22 +1,10 @@
-import PropTypes from "prop-types";
 import React from "react";
-import { pages } from "../pages";
+import { Routes } from "../Routes";
 
-export const Main = ({ page }) => {
-  console.log(page);
-  const Page = pages[page];
-
+export const Main = () => {
   return (
     <main className="app-main column is-vertical py-5 px-6">
-      <Page />
+      <Routes />
     </main>
   );
 }
-
-Main.defaultProps = {
-  page: "Main",
-}
-
-Main.propTypes = {
-  page: PropTypes.string.isRequired,
-};

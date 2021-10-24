@@ -1,58 +1,58 @@
 import { Route, Switch } from "react-router";
-import { Main as MainLayout } from "./layout";
 import * as route from "./constants/routes";
 import { SecureComponent } from "./atoms";
+import * as pages from "./pages";
 
 export function Routes(props) {
   return <Switch>
     <Route path={ route.HOME_PATH } exact>
-      <MainLayout page="Home" />
+      <pages.Home />
     </Route>
 
     <Route path={ route.ABOUT_PATH }>
-      <MainLayout page="About" />
+      <pages.About />
     </Route>
 
     <Route path={ route.SERVICES_PATH }>
-      <MainLayout page="Services" />
+      <pages.Services />
     </Route>
 
     <Route path={ route.STAFF_PATH }>
-      <MainLayout page="Staff" />
+      <pages.Staff />
     </Route>
 
     <Route path={ route.LOGIN_PATH }>
-      <MainLayout page="Login" />
+      <pages.Login />
     </Route>
 
     <Route path={ route.REGISTER_PATH }>
-      <MainLayout page="Register" />
+      <pages.Register />
     </Route>
 
     <Route path={ route.CHECK_EMAIL_PATH }>
-      <MainLayout page="CheckEmail" />
+      <pages.CheckEmail />
     </Route>
 
     <Route path={ route.SET_NEW_PASSWORD_PATH }>
-      <MainLayout page="SetNewPassword" />
+      <pages.SetNewPassword />
     </Route>
 
     <Route path={ route.COUNTERS_PATH }>
-      <MainLayout page="Counters" />
+      <pages.Counters />
     </Route>
 
     <Route path={ route.USERS_PATH }>
-      <MainLayout page="Users" />
+      <pages.Users />
     </Route>
 
     <Route path={ route.PROFILE_PATH }>
       <SecureComponent>
-        <MainLayout page="Profile" />
+        <pages.Profile />
       </SecureComponent>
     </Route>
 
     <Route path={ route.ACCESS_IS_DENIED_PATH }>
-      <MainLayout page="AccessIsDenied" />
+      <pages.AccessIsDenied />
     </Route>
   </Switch>;
 };

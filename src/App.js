@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Routes } from "./Routes";
-import { Header, Footer, Sidebar } from "./layout";
+// import { Routes } from "./Routes";
+import { Header, Footer, Sidebar, Main } from "./layout";
 import { mainMenuItems, sidebarMenuItems } from "./api";
 
 import "./App.css";
@@ -39,8 +39,7 @@ class App extends React.Component {
   render() {
     const mainMenuItems = this.state.mainMenuItems;
     const sidebarMenuItems = this.state.sidebarMenuItems;
-    const mainContent = this.state.mainContent;
-
+ 
     return (
       <div className="app">
         <div className="container">
@@ -56,8 +55,7 @@ class App extends React.Component {
               sidebarMenuItems={sidebarMenuItems}
               handleClick={this.menuItemsHandleClick}
             />
-            <Routes
-              content={mainContent}
+            <Main
               customButtonClickHandler={this.customButtonClickHandler}
             />
           </div>
