@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Routes } from "./Routes";
-import { Header, Main, Footer, Sidebar } from "./layout";
+import { Header, Footer, Sidebar } from "./layout";
 import { mainMenuItems, sidebarMenuItems } from "./api";
 
 import "./App.css";
