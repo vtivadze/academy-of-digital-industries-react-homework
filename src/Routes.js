@@ -5,8 +5,8 @@ import { SecureComponent } from "./atoms/SecureComponent/SecureComponent";
 
 export function Routes(props) {
   return <Switch>
-    <Route path={ route.MAIN_PATH } exact>
-      <MainLayout page="Main" />
+    <Route path={ route.HOME_PATH } exact>
+      <MainLayout page="Home" />
     </Route>
 
     <Route path={ route.ABOUT_PATH }>

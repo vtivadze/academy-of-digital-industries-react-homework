@@ -1,4 +1,4 @@
-export const Main = () => {
+export const Home = () => {
   return (
     <div className="conainer">
       <h1 className="mb-3 is-size-1 has-text-centered">React Features</h1>

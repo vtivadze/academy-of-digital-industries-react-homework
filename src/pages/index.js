@@ -1,5 +1,5 @@
 // Main menu routes
-export { Main } from "./main";
+export { Home } from "./home";
 export { About } from "./about";
 export { Services } from "./services";
 export { Staff } from "./staff";

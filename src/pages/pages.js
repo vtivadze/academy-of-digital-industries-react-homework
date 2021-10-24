@@ -1,5 +1,5 @@
 import {
-  Main,
+  Home,
   About,
   Services,
   Staff,
@@ -14,7 +14,7 @@ import {
 } from "./index";
 
 export const pages = {
-  Main,
+  Home,
   About,
   Services,
   Staff,

@@ -1,4 +1,4 @@
-export const MAIN_PATH = "/";
+export const HOME_PATH = "/";
 export const ABOUT_PATH = "/about";
 export const SERVICES_PATH = "/services";
 export const STAFF_PATH = "/staff";
