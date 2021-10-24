@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router";
 import { Main as MainLayout } from "./layout";
 import * as route from "./constants/routes";
-import { SecureComponent } from "./atoms/SecureComponent/SecureComponent";
+import { SecureComponent } from "./atoms";
 
 export function Routes(props) {
   return <Switch>

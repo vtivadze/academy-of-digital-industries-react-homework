@@ -1,8 +1,4 @@
-import { EmailInput } from "../../atoms/EmailInput";
-import { NameInput } from "../../atoms/NameInput";
-import { PasswordInput } from "../../atoms/PasswordInput";
-import { PasswordRepeatInput } from "../../atoms/PasswordRepeatInput";
-import { UsernameInput } from "../../atoms/UsernameInput";
+import { EmailInput, NameInput, PasswordInput, PasswordRepeatInput, UsernameInput } from "../../atoms";
 
 export const RegisterForm = () => {
   const onSubmit = event => event.preventDefault();

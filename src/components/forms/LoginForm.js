@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { EmailInput } from "../../atoms/EmailInput/EmailInput";
-import { PasswordInput } from "../../atoms/PasswordInput/PasswordInput";
+import { EmailInput, PasswordInput } from "../../atoms";
 import { CHECK_EMAIL_PATH, PROFILE_PATH } from "../../constants/routes";
 
 export const LoginForm = () => {

@@ -1,4 +1,4 @@
-import { EmailInput } from "../../atoms/EmailInput";
+import { EmailInput } from "../../atoms";
 
 export const CheckEmailForm = () => {
   const onSubmit = event => event.preventDefault();
