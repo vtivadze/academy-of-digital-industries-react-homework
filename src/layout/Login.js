@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { LOGIN_PATH, REGISTER_PATH } from "../constants/routes";
+import { AuthContext } from "../provides/AuthProviders";
+
 export const Login = () => {
-  const loggedIn = false;
+  const loggedIn = useContext(AuthContext);
 
   const renderGuestLinks = () => {
     return (
