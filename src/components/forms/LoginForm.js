@@ -1,25 +1,22 @@
-import { useHistory } from "react-router-dom";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+
+import { AuthContext } from "../../providers/AuthProvider";
 import { EmailInput, PasswordInput } from "../../atoms";
-import { CHECK_EMAIL_PATH, PROFILE_PATH } from "../../constants/routes";
-import { AUTH_TOKEN } from "../../constants/constants";
-import { saveItem } from "../../helpers/localStorage";
+import { CHECK_EMAIL_PATH } from "../../constants/routes";
 
 export const LoginForm = () => {
-  const history = useHistory();
+  const { logIn } = useContext(AuthContext);
 
   const onSubmit = event => {
     event.preventDefault();
 
-    const loginData = {};
     const fd = new FormData(event.target);
+    const loginData = {};
 
     for (let [key, value] of fd.entries()) {
       loginData[key] = value;
     }
-
-    // console.log(loginData);
-    // console.log(process.env.REACT_APP_API_URL);
 
     fetch ( `${process.env.REACT_APP_API_URL}/login`, {
       method: "POST",
@@ -32,8 +29,7 @@ export const LoginForm = () => {
       .then(res => res.json())
       .then(result => {
         if (result.token) {
-          saveItem(AUTH_TOKEN, result.token);
-          history.replace(PROFILE_PATH)
+          logIn(result.token);
         }
       })
       .catch(error => {
