@@ -10,6 +10,7 @@ import {
   Signup,
   CheckEmail,
   NewPassword,
+  AccessIsDenied,
 } from "./index";
 
 export const pages = {
@@ -24,4 +25,5 @@ export const pages = {
   Signup,
   CheckEmail,
   NewPassword,
+  AccessIsDenied
 };

@@ -50,5 +50,9 @@ export function Routes(props) {
         <MainLayout page="Profile" />
       </SecureComponent>
     </Route>
+
+    <Route path={ route.ACCESS_IS_DENIED_PATH }>
+      <MainLayout page="AccessIsDenied" />
+    </Route>
   </Switch>;
 };
