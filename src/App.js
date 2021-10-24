@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Routes } from "./Routes";
 import { Header, Main, Footer, Sidebar } from "./layout";
 import { mainMenuItems, sidebarMenuItems } from "./api";
 
@@ -55,7 +56,7 @@ class App extends React.Component {
               sidebarMenuItems={sidebarMenuItems}
               handleClick={this.menuItemsHandleClick}
             />
-            <Main
+            <Routes
               content={mainContent}
               customButtonClickHandler={this.customButtonClickHandler}
             />
