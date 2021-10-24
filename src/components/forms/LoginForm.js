@@ -15,9 +15,7 @@ export const LoginForm = () => {
     }
 
     console.log(loginData);
-    // const loginData = {
-    //   email, password
-    // };
+    console.log(process.env.REACT_APP_API_URL);
   }
 
   return (
