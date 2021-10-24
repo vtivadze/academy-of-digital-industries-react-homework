@@ -12,6 +12,8 @@ export const RegisterForm = () => {
       className="box column is-half is-offset-one-quarter mt-6"
       onSubmit={ onSubmit }
     >
+      <h1 className="title has-text-centered">Register</h1>
+      
       <div className="field">
         <NameInput inputName="name" />
       </div>

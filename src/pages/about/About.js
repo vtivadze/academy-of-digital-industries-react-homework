@@ -1,3 +1,3 @@
 export const About = () => {
-  return "About page";
+  return <h1 className="title">About Page</h1>;
 };

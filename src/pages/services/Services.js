@@ -1,3 +1,3 @@
 export const Services = () => {
-  return "Services page";
+  return <h1 className="title">Services Page</h1>;
 };

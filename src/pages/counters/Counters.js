@@ -3,6 +3,8 @@ import { Counter } from "../../components";
 export const Counters = () => {
   return (
     <div className="section px-0">
+      <h1 className="title has-text-centered">Counters</h1>
+      
       <div className="columns">
         <div className="column is-one-quarter">
           <Counter initialValue={0} initialStep={1} />

@@ -1,3 +1,3 @@
 export const Profile = () => {
-  return "Profile page";
+  return <h1 className="title">Profile Page</h1>;
 };

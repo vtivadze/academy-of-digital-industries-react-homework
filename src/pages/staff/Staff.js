@@ -1,3 +1,3 @@
 export const Staff = () => {
-  return "Staff page";
+  return <h1 className="title">Staff Page</h1>;
 };

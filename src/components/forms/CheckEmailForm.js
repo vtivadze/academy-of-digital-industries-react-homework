@@ -8,6 +8,8 @@ export const CheckEmailForm = () => {
       className="box column is-half is-offset-one-quarter mt-6"
       onSubmit={ onSubmit }
     >
+      <h1 className="title has-text-centered">Check Email</h1>
+      
       <div className="field">
         <EmailInput inputName="email" />
       </div>

@@ -1,3 +1,3 @@
 export const AccessIsDenied = () => {
-  return "Access is denied page";
+  return <h1 className="title">Access Is Denied Page</h1>;
 };
