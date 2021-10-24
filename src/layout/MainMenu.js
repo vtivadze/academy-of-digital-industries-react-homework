@@ -8,17 +8,14 @@ export const MainMenu = props => {
   return (
     <nav className="main-menu is-align-self-flex-end">
       <ul className="main-menu__container tile">
-        <List
-          items={ items }
-          handleClick={ props.handleClick }
-        />
+        <List items={items} />
       </ul>
     </nav>
   );
 }
 
 MainMenu.defaultProps = {
-  items: new MainMenuItem(["item", "#", false, "main-menu__item"]),
+  items: new MainMenuItem(["item", "#", "main-menu__item"]),
 };
 
 MainMenu.propTypes = {
@@ -26,7 +23,6 @@ MainMenu.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      isActive: PropTypes.bool.isRequired,
       className: PropTypes.string.isRequired,
     })
   ).isRequired,

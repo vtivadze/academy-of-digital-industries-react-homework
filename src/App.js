@@ -15,27 +15,7 @@ class App extends React.Component {
       sidebarMenuItems,
       mainContent: "Home",
     }
-
-    this.menuItemsHandleClick = this.menuItemsHandleClick.bind(this);
-    this.customButtonClickHandler = this.customButtonClickHandler.bind(this);
   }
-
-  menuItemsHandleClick(i, className) {
-    const menuName = className.replace("-menu__item", "") + "MenuItems";
-
-    this.setState((state) => ({
-      menuName: state[menuName].map((item, index) => {
-        item.isActive = i === index;
-        return item;
-      }),
-      mainContent: state[menuName][i].name,
-   }));
-  }
-
-  customButtonClickHandler(itemName) {
-    this.setState({mainContent: itemName});
-  };
-
   render() {
     const mainMenuItems = this.state.mainMenuItems;
     const sidebarMenuItems = this.state.sidebarMenuItems;
@@ -43,21 +23,14 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="container">
-          <Header
-            mainMenuItems={mainMenuItems}
-            handleClick={this.menuItemsHandleClick}
-            customButtonClickHandler={this.customButtonClickHandler}
-          />
+          <Header mainMenuItems={mainMenuItems} />
         </div>
         <div className="container column">
           <div className="columns is-gapeless">
             <Sidebar 
               sidebarMenuItems={sidebarMenuItems}
-              handleClick={this.menuItemsHandleClick}
             />
-            <Main
-              customButtonClickHandler={this.customButtonClickHandler}
-            />
+            <Main />
           </div>
         </div>
         <div className="container">

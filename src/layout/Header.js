@@ -9,19 +9,14 @@ export const Header = props => {
   return (
     <header className="app-header section py-5 px-6 tile is-justify-content-space-between">
       <Logo />
-      <MainMenu
-        items={props.mainMenuItems}
-        handleClick={props.handleClick}
-      />
-      <Login
-        customButtonClickHandler={props.customButtonClickHandler}
-      />
+      <MainMenu items={props.mainMenuItems} />
+      <Login />
     </header>
   );
 }
 
 Header.defaultProps = {
-  mainMenuItems: [new MainMenuItem(["item", "#", false, "main-menu__item"])],
+  mainMenuItems: [new MainMenuItem(["item", "#", "main-menu__item"])],
 };
 
 Header.propTypes = {
@@ -29,7 +24,6 @@ Header.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      isActive: PropTypes.bool.isRequired,
       className: PropTypes.string.isRequired,
     })
   ).isRequired,

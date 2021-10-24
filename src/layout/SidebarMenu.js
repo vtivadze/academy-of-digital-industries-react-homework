@@ -19,9 +19,15 @@ export const SidebarMenu = props =>  {
 }
 
 SidebarMenu.defaultProps = {
-  items: [new SidebarMenuItem(["Counter", "#", false, "sidebar-menu__item"])],
+  items: [new SidebarMenuItem(["Counter", "#", "sidebar-menu__item"])],
 };
 
 SidebarMenu.propTypes = {
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      className: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

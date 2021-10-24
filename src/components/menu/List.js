@@ -8,8 +8,6 @@ export const List = props => {
       return (
         <Item
           item={item}
-          handleClick={props.handleClick}
-          index={index}
           key={`${index}-${item.name}`}
         />
       );
@@ -18,7 +16,7 @@ export const List = props => {
 }
 
 List.defaultProps = {
-  items: [new MenuItem("item", "#", false)],
+  items: [new MenuItem("item", "#")],
 };
 
 List.propTypes = {
@@ -26,7 +24,6 @@ List.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      isActive: PropTypes.bool.isRequired,
     })
   ).isRequired,
 }

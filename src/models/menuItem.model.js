@@ -1,8 +1,7 @@
 export class MenuItem {
-  constructor([name = "item", href = "#", isActive = false]) {
+  constructor([name = "item", href = "#"]) {
     this.name = name;
     this.href = href;
-    this.isActive = isActive;
     this.className = "menu__item";
   }
 }
