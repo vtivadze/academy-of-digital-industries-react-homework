@@ -46,9 +46,10 @@ export function Routes(props) {
     </Route>
 
     <Route path={ route.PROFILE_PATH }>
-      <SecureComponent>
-        <pages.Profile />
-      </SecureComponent>
+      <SecureComponent
+        Page={pages.Profile}
+        parameter="Parameter passed from Routes SecureComponent"
+      />
     </Route>
 
     <Route path={ route.ACCESS_IS_DENIED_PATH }>
