@@ -27,9 +27,7 @@ class App extends React.Component {
         </div>
         <div className="container column">
           <div className="columns is-gapeless">
-            <Sidebar 
-              sidebarMenuItems={sidebarMenuItems}
-            />
+            <Sidebar sidebarMenuItems={sidebarMenuItems} />
             <Main />
           </div>
         </div>
