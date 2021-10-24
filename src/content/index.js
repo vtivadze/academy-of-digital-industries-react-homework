@@ -1,4 +1,7 @@
 export { MainContent } from "./main/MainContent";
+export { AboutContent } from "./main/AboutContent";
+export { ServicesContent } from "./main/ServicesContent";
+export { StaffContent } from "./main/StaffContent";
 export { CounterContent } from "./main/CounterContent";
 export { UsersContent } from "./main/UsersContent";
 export { LoginFormContent } from "./main/LoginFormContent";
