@@ -28,7 +28,7 @@ export const Login = () => {
 
   const renderUserLinks = () => {
     return (
-      <button className="button is-info mr-0 mb-0">
+      <button className="button is-info mr-0 mb-0" onClick={logOut}>
         <strong>Log Out</strong>
       </button>
     );
