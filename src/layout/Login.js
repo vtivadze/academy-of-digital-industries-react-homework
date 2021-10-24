@@ -3,7 +3,7 @@ import { LOGIN_PATH, REGISTER_PATH } from "../constants/routes";
 import { AuthContext } from "../provides/AuthProviders";
 
 export const Login = () => {
-  const { loggedIn } = useContext(AuthContext);
+  const { loggedIn, logOut } = useContext(AuthContext);
 
   const renderGuestLinks = () => {
     return (
