@@ -3,9 +3,14 @@ import { useEffect } from "react";
 export const Profile = (props) => {
   useEffect(() => {
     document.body.style.background = "yellow";
+
     return () => {
       // cleanup function
       document.body.style.background = "initial";
+
+      // reset AJAX
+
+      // Abort controller WEB API
     };
   },[]);
 
