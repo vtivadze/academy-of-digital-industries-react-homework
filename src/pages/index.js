@@ -10,5 +10,6 @@ export { NewPassword } from "./auth";
 
 export { Counters } from "./counters";
 export { Users } from "./users";
+export { Profile } from "./profile";
 
 export { pages } from "./pages";

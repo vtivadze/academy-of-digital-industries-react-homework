@@ -43,5 +43,9 @@ export function Routes(props) {
     <Route path={ route.USERS_PATH }>
       <MainLayout page="Users" />
     </Route>
+
+    <Route path={ route.PROFILE_PATH }>
+      <MainLayout page="Profile" />
+    </Route>
   </Switch>;
 };

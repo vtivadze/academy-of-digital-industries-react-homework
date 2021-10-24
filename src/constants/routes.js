@@ -8,3 +8,4 @@ export const CHECK_EMAIL_PATH = "/check-email";
 export const NEW_PASSWORD_PATH = "/new-password";
 export const COUNTERS_PATH = "/counters";
 export const USERS_PATH = "/users";
+export const PROFILE_PATH = "/profile";
