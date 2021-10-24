@@ -9,7 +9,7 @@ import {
   Login,
   Signup,
   CheckEmail,
-  NewPassword,
+  SetNewPassword,
   AccessIsDenied,
 } from "./index";
 
@@ -24,6 +24,6 @@ export const pages = {
   Login,
   Signup,
   CheckEmail,
-  NewPassword,
+  SetNewPassword,
   AccessIsDenied
 };

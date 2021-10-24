@@ -1,4 +1,4 @@
 export { CheckEmail } from "./checkEmail";
 export { Login } from "./login";
-export { NewPassword } from "./newPassword";
+export { SetNewPassword } from "./setNewPassword";
 export { Signup } from "./signup";

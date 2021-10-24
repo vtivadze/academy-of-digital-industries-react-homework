@@ -33,8 +33,8 @@ export function Routes(props) {
       <MainLayout page="CheckEmail" />
     </Route>
 
-    <Route path={ route.NEW_PASSWORD_PATH }>
-      <MainLayout page="NewPassword" />
+    <Route path={ route.SET_NEW_PASSWORD_PATH }>
+      <MainLayout page="SetNewPassword" />
     </Route>
 
     <Route path={ route.COUNTERS_PATH }>

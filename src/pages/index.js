@@ -8,7 +8,7 @@ export { Staff } from "./staff";
 export { Login } from "./auth";
 export { Signup } from "./auth";
 export { CheckEmail } from "./auth";
-export { NewPassword } from "./auth";
+export { SetNewPassword } from "./auth";
 
 // Sidebar routes
 export { Counters } from "./counters";
