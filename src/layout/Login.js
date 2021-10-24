@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Login = (props) => {
   const clickHandler = (itemName) => {
     return props.customButtonClickHandler(itemName);
@@ -5,18 +7,20 @@ export const Login = (props) => {
 
   return (
     <div className="buttons is-flex-direction-column-reverse mb-0">
-      <button
+      <Link
         className="button is-primary mr-0 mb-0"
         onClick={clickHandler.bind(null, "SignupForm")}
+        to="/signup"
       >
         <strong>Sign up</strong>
-      </button>
-      <button
+      </Link>
+      <Link
         className="button is-light is-align-self-stretch mr-0"
         onClick={clickHandler.bind(null, "LoginForm")}
+        to="/login"
       >
         Log in
-      </button>
+      </Link>
     </div>
   );
 };
