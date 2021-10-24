@@ -1,41 +1,38 @@
 import { Route, Switch } from "react-router";
-import { Main } from "./layout";
+import { Main as MainLayout } from "./layout";
 
 export function Routes(props) {
   return <Switch>
     <Route path="/" exact>
-      <Main
-        content="Main"
-        customButtonClickHandler={props.customButtonClickHandler}
-      />
+      <MainLayout page="Main" />
     </Route>
 
     <Route path="/about" exact>
-      <Main content="About" />
+      <MainLayout page="About" />
     </Route>
 
     <Route path="/services" exact>
-      <Main content="Services" />
+      <MainLayout page="Services" />
     </Route>
 
     <Route path="/staff" exact>
-      <Main content="Staff" />
+      <MainLayout page="Staff" />
     </Route>
 
     <Route path="/login" exact>
-      <Main content="LoginForm" />
+      <MainLayout page="LoginForm" />
     </Route>
 
     <Route path="/signup" exact>
-      <Main content="SignupForm" />
+      <MainLayout page="SignupForm" />
     </Route>
 
     <Route path="/counter" exact>
-      <Main content="Counter" />
+      <MainLayout page="Counter" />
     </Route>
 
     <Route path="/users" exact>
-      <Main content="Users" />
+      <MainLayout page="Users" />
     </Route>
   </Switch>;
 };
