@@ -1,4 +1,4 @@
 export { LoginForm } from "./LoginForm";
-export { SignupForm } from "./SignupForm";
+export { RegisterForm } from "./RegisterForm";
 export { CheckEmailForm } from "./CheckEmailForm";
 export { SetNewPasswordForm } from "./SetNewPasswordForm";

@@ -7,7 +7,7 @@ import {
   Users,
   Profile,
   Login,
-  Signup,
+  Register,
   CheckEmail,
   SetNewPassword,
   AccessIsDenied,
@@ -22,7 +22,7 @@ export const pages = {
   Users,
   Profile,
   Login,
-  Signup,
+  Register,
   CheckEmail,
   SetNewPassword,
   AccessIsDenied

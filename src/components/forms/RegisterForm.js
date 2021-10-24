@@ -4,7 +4,7 @@ import { PasswordInput } from "../../atoms/PasswordInput";
 import { PasswordRepeatInput } from "../../atoms/PasswordRepeatInput";
 import { UsernameInput } from "../../atoms/UsernameInput";
 
-export const SignupForm = () => {
+export const RegisterForm = () => {
   const onSubmit = event => event.preventDefault();
 
   return (

@@ -6,7 +6,7 @@ export { Staff } from "./staff";
 
 // Authorization routes
 export { Login } from "./auth";
-export { Signup } from "./auth";
+export { Register } from "./auth";
 export { CheckEmail } from "./auth";
 export { SetNewPassword } from "./auth";
 

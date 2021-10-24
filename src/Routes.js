@@ -25,8 +25,8 @@ export function Routes(props) {
       <MainLayout page="Login" />
     </Route>
 
-    <Route path={ route.SIGNUP_PATH }>
-      <MainLayout page="Signup" />
+    <Route path={ route.REGISTER_PATH }>
+      <MainLayout page="Register" />
     </Route>
 
     <Route path={ route.CHECK_EMAIL_PATH }>

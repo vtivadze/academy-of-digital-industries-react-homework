@@ -3,6 +3,7 @@ import React from "react";
 import { pages } from "../pages";
 
 export const Main = ({ page }) => {
+  console.log(page);
   const Page = pages[page];
 
   return (
