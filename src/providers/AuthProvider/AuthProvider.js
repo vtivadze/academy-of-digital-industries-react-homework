@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
 
@@ -29,4 +29,12 @@ export const AuthProvider = ({children}) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+export const useAuthContext = () => {
+  const value = useContext(AuthContext);
+  if (! value) {
+    throw new Error("Auth Context Provider is not defined!");
+  }
+  return value;
 };
