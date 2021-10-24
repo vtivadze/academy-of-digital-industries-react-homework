@@ -7,39 +7,39 @@ export function Routes(props) {
       <MainLayout page="Main" />
     </Route>
 
-    <Route path="/about" exact>
+    <Route path="/about">
       <MainLayout page="About" />
     </Route>
 
-    <Route path="/services" exact>
+    <Route path="/services">
       <MainLayout page="Services" />
     </Route>
 
-    <Route path="/staff" exact>
+    <Route path="/staff">
       <MainLayout page="Staff" />
     </Route>
 
-    <Route path="/login" exact>
+    <Route path="/login">
       <MainLayout page="Login" />
     </Route>
 
-    <Route path="/signup" exact>
+    <Route path="/signup">
       <MainLayout page="Signup" />
     </Route>
 
-    <Route path="/check-email" exact>
+    <Route path="/check-email">
       <MainLayout page="CheckEmail" />
     </Route>
 
-    <Route path="/new-password" exact>
+    <Route path="/new-password">
       <MainLayout page="NewPassword" />
     </Route>
 
-    <Route path="/counters" exact>
+    <Route path="/counters">
       <MainLayout page="Counters" />
     </Route>
 
-    <Route path="/users" exact>
+    <Route path="/users">
       <MainLayout page="Users" />
     </Route>
   </Switch>;
