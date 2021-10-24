@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { List } from "../components/menu";
-import { MainMenuItem } from "../models";
+import { mainMenuItems } from "../api";
 
-export const MainMenu = props => {
-  const items = props.items;
+export const MainMenu = () => {
+  const items = mainMenuItems;
 
   return (
     <nav className="main-menu is-align-self-flex-end">
@@ -13,17 +12,3 @@ export const MainMenu = props => {
     </nav>
   );
 }
-
-MainMenu.defaultProps = {
-  items: new MainMenuItem(["item", "#", "main-menu__item"]),
-};
-
-MainMenu.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-      className: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
