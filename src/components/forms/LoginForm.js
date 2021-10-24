@@ -61,10 +61,7 @@ export const LoginForm = () => {
           <button className="button is-success">Log in</button>
         </p>
         <p className="control">
-          <NavLink
-            className="button is-ghost"
-            to={ CHECK_EMAIL_PATH }
-          >
+          <NavLink className="button is-ghost" to={ CHECK_EMAIL_PATH }>
             Forgot password?
           </NavLink>
         </p>
