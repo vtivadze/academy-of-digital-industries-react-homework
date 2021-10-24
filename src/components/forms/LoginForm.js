@@ -16,6 +16,22 @@ export const LoginForm = () => {
 
     console.log(loginData);
     console.log(process.env.REACT_APP_API_URL);
+
+    fetch ( `${process.env.REACT_APP_API_URL}/login`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   return (
@@ -24,11 +40,11 @@ export const LoginForm = () => {
       onSubmit={onSubmit}  
     >
       <div className="field">
-        <EmailInput inputName="email" />
+        <EmailInput inputName="email" value="eve.holt@reqres.in" />
       </div>
 
       <div className="field">
-        <PasswordInput inputName="password" />
+        <PasswordInput inputName="password" value="cityslicka" />
       </div>
 
       <div className="field tile is-justify-content-space-between">
