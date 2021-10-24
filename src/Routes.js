@@ -22,6 +22,18 @@ export function Routes(props) {
       <Main content="Staff" />
     </Route>
 
+    <Route path="/login" exact>
+      <Main content="Login" />
+    </Route>
+
+    <Route path="/singup" exact>
+      <Main content="Signup" />
+    </Route>
+
+    <Route path="/counter" exact>
+      <Main content="Counter" />
+    </Route>
+
     <Route path="/users" exact>
       <Main content="Users" />
     </Route>
