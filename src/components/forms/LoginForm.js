@@ -1,9 +1,12 @@
+import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { EmailInput } from "../../atoms/EmailInput/EmailInput";
 import { PasswordInput } from "../../atoms/PasswordInput/PasswordInput";
-import { CHECK_EMAIL_PATH } from "../../constants/routes";
+import { CHECK_EMAIL_PATH, PROFILE_PATH } from "../../constants/routes";
 
 export const LoginForm = () => {
+  const history = useHistory();
+
   const onSubmit = event => {
     event.preventDefault();
 
@@ -14,8 +17,8 @@ export const LoginForm = () => {
       loginData[key] = value;
     }
 
-    console.log(loginData);
-    console.log(process.env.REACT_APP_API_URL);
+    // console.log(loginData);
+    // console.log(process.env.REACT_APP_API_URL);
 
     fetch ( `${process.env.REACT_APP_API_URL}/login`, {
       method: "POST",
@@ -27,7 +30,9 @@ export const LoginForm = () => {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
+        if (result.token) {
+          history.replace(PROFILE_PATH)
+        }
       })
       .catch(error => {
         console.log(error);
