@@ -4,7 +4,7 @@ import { getFormInputClassName } from "../../helpers";
 import { PASSWORD_MIN_LENGTH } from "../../constants/validation";
 import { PASSWORD_MAX_LENGTH } from "../../constants/validation";
 
-export const PasswordInput = ({ inputName = "password"} ) => {
+export const PasswordInput = ({ inputName="password", value=""} ) => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
 
@@ -30,7 +30,7 @@ export const PasswordInput = ({ inputName = "password"} ) => {
       <input
         className={getFormInputClassName(passwordError, password)}
         name= { inputName }
-        value={password}
+        value={password ? password : value}
         type="password"
         placeholder="Password"
         autoComplete="current-password"

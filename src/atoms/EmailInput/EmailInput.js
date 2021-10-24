@@ -5,7 +5,7 @@ import { EMAIL_MIN_LENGTH } from "../../constants/validation";
 import { EMAIL_MAX_LENGTH } from "../../constants/validation";
 import { EMAIL_PATTERN } from "../../constants/validation";
 
-export const EmailInput = ({ inputName = "email" }) => {
+export const EmailInput = ({ inputName="email", value="" }) => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
 
@@ -33,7 +33,7 @@ export const EmailInput = ({ inputName = "email" }) => {
       <input
         className={getFormInputClassName(emailError, email)}
         name={ inputName }
-        value={email}
+        value={email ? email : value}
         type="email"
         placeholder="Email"
         autoComplete="email"
