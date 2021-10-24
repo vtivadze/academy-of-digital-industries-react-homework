@@ -1,3 +1,9 @@
+import { LoginForm } from "../../../components/forms";
+
 export const Login = () => {
-  return "Login page";
-}
+  return (
+    <div className="columns">
+      <LoginForm />
+    </div>
+  );
+};

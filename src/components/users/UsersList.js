@@ -17,5 +17,11 @@ UsersList.defaultProps = {
 };
 
 UsersList.propTypes = {
-  data: PropTypes.arrayOf(UserModel).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      age: PropTypes.number,
+    })
+  ).isRequired,
 };

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { EmailInput } from "../../atoms/EmailInput/EmailInput";
 import { PasswordInput } from "../../atoms/PasswordInput/PasswordInput";
 
@@ -36,7 +37,12 @@ export const LoginForm = () => {
           <button className="button is-success">Log in</button>
         </p>
         <p className="control">
-          <button className="button is-ghost">Forgot password?</button>
+          <NavLink
+            className="button is-ghost"
+            to="/check-email"
+          >
+            Forgot password?
+          </NavLink>
         </p>
       </div>
     </form>

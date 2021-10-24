@@ -1,6 +1,6 @@
 import { Counter } from "../../components";
 
-export const CounterContent = () => {
+export const Counters = () => {
   return (
     <div className="section px-0">
       <div className="columns">

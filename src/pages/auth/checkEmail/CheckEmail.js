@@ -1,3 +1,9 @@
+import { CheckEmailForm } from "../../../components/forms";
+
 export const CheckEmail = () => {
-  return "Check email page";
+  return (
+    <div className="columns">
+      <CheckEmailForm />
+    </div>
+  );
 };

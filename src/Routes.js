@@ -27,8 +27,16 @@ export function Routes(props) {
       <MainLayout page="Signup" />
     </Route>
 
-    <Route path="/counter" exact>
-      <MainLayout page="Counter" />
+    <Route path="/check-email" exact>
+      <MainLayout page="CheckEmail" />
+    </Route>
+
+    <Route path="/new-password" exact>
+      <MainLayout page="NewPassword" />
+    </Route>
+
+    <Route path="/counters" exact>
+      <MainLayout page="Counters" />
     </Route>
 
     <Route path="/users" exact>

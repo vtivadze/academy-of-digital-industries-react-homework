@@ -1,3 +1,9 @@
+import { NewPasswordForm } from "../../../components/forms";
+
 export const NewPassword = () => {
-  return "New password page";
+  return (
+    <div className="columns">
+      <NewPasswordForm />
+    </div>
+  );
 };

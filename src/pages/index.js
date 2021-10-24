@@ -8,7 +8,7 @@ export { Signup } from "./auth";
 export { CheckEmail } from "./auth";
 export { NewPassword } from "./auth";
 
-export { Counter } from "./counter";
+export { Counters } from "./counters";
 export { Users } from "./users";
 
 export { pages } from "./pages";
