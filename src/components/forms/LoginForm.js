@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { EmailInput } from "../../atoms/EmailInput/EmailInput";
 import { PasswordInput } from "../../atoms/PasswordInput/PasswordInput";
+import { CHECK_EMAIL_PATH } from "../../constants/routes";
 
 export const LoginForm = () => {
   const onSubmit = event => {
@@ -39,7 +40,7 @@ export const LoginForm = () => {
         <p className="control">
           <NavLink
             className="button is-ghost"
-            to="/check-email"
+            to={ CHECK_EMAIL_PATH }
           >
             Forgot password?
           </NavLink>
