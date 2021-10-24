@@ -2,20 +2,20 @@ import PropTypes from "prop-types";
 import React from "react";
 import { mainContents } from "../content";
 
-export const Main = (props) => {
-  const Component = mainContents[props.content];
+export const Main = ({ page }) => {
+  const Page = mainContents[page];
 
   return (
     <main className="app-main column is-vertical py-5 px-6">
-      <Component />
+      <Page />
     </main>
   );
 }
 
 Main.defaultProps = {
-  content: "Main",
+  page: "Main",
 }
 
 Main.propTypes = {
-  content: PropTypes.string.isRequired,
+  page: PropTypes.string.isRequired,
 };
