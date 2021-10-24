@@ -1,17 +1,18 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 import { Link as LinkItem } from "../../models";
 
 export const Link = (props) => {
   const {name, href, className} = props.link;
 
   return (
-    <a
+    <NavLink
       className={`${className}-link button is-size-4 is-block`}
-      href={href}
+      to={href}
       title={name}
     >
       {name}
-    </a>
+    </NavLink>
   );
 }
 
