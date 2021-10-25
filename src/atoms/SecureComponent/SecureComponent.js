@@ -6,5 +6,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 export const SecureComponent = ({ Page, ...props }) => {
   const { loggedIn } = useContext(AuthContext);
 
-  return loggedIn ? <Page {...props} /> : <Redirect to={ ACCESS_IS_DENIED_PATH } />;
+  return loggedIn ? (
+    <Page {...props} />
+  ) : (
+    <Redirect to={ACCESS_IS_DENIED_PATH} />
+  );
 };
