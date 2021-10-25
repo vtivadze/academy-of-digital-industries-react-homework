@@ -5,6 +5,10 @@ import * as pages from "./pages";
 
 export function Routes(props) {
   return <Switch>
+    <Route path={ route.INDEX_PATH } exact>
+      <pages.Home />
+    </Route>
+
     <Route path={ route.HOME_PATH } exact>
       <pages.Home />
     </Route>
