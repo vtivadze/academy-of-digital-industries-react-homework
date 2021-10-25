@@ -5,6 +5,8 @@
   "arrowParens": "avoid",
   "trailingComma": "es5",
   "bracketSpacing": true,
+  "bracketSameLine": true,
+  "endOfLine": "auto",
   "jsxSingleQuote": false,
   "tabWidth": 2
 }
