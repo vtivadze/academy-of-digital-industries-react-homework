@@ -5,7 +5,10 @@ export const withUserList = (Component) => {
   const WithUserList = (props) => {
 
     useEffect(() => {
-      getUserList();
+      (async () => {
+        const data = getUserList();
+        console.log(data);
+      })();
     }, []);
 
     return <Component {...props} userList={{}} />
