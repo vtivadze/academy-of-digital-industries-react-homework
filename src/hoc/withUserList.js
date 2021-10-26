@@ -4,22 +4,15 @@ import { getUserList } from "../services/userServices";
 export const withUserList = (Component) => {
   const WithUserList = (props) => {
 
-    const [users, setUsers] = useState(async () => {
-      return await getUserList();
-    });
-    
-    // const fetchUsers = async () => {
-    //   const data = await getUserList();
-    //   console.log(data);
-    // };
+    const [users, setUsers] = useState([]);
+    const fetchUsers = async () => await getUserList();
+    useEffect(() => {
+      (async () => {
+        setUsers(await fetchUsers());
+      })();
+    }, []);
 
-    // useEffect(() => {
-    //   (async () => {
-    //     fetchUsers();
-    //   })();
-    // }, []);
-
-    return <Component {...props} userList={{}} />
+    return <Component {...props} userList={users} />
   }
   return WithUserList;
 };
