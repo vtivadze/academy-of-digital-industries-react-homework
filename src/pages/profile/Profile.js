@@ -1,18 +1,19 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
+import { withUserList } from '../../hoc/withUserList';
 
-export const Profile = props => {
-  useEffect(() => {
-    document.body.style.background = 'yellow';
+export const Profile = withUserList(props => {
+  // useEffect(() => {
+  //   document.body.style.background = 'yellow';
 
-    return () => {
-      // cleanup function
-      document.body.style.background = 'initial';
+  //   return () => {
+  //     // cleanup function
+  //     document.body.style.background = 'initial';
 
-      // reset AJAX
+  //     // reset AJAX
 
-      // Abort controller WEB API
-    };
-  }, []);
+  //     // Abort controller WEB API
+  //   };
+  // }, []);
 
   return (
     <>
@@ -20,4 +21,4 @@ export const Profile = props => {
       <p>{props.parameter}</p>
     </>
   );
-};
+});
