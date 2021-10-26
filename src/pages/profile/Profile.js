@@ -1,7 +1,7 @@
 // import { useEffect } from 'react';
 import { withUserList } from '../../hoc/withUserList';
 
-export const Profile = withUserList(props => {
+const Profile = props => {
   // useEffect(() => {
   //   document.body.style.background = 'yellow';
 
@@ -21,4 +21,6 @@ export const Profile = withUserList(props => {
       <p>{props.parameter}</p>
     </>
   );
-});
+};
+
+export default withUserList(Profile);
