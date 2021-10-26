@@ -1,7 +1,7 @@
 // import { useEffect } from 'react';
 import { withUserList } from '../../hoc/withUserList';
 
-const Profile = ({parameter, userList}) => {
+const Profile = ({ parameter, userList }) => {
   return (
     <>
       <h1 className="title">Profile Page</h1>
