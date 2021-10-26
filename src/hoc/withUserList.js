@@ -1,13 +1,14 @@
 import { useEffect } from "react";
+import { getUserList } from "../services/userServices";
 
 export const withUserList = (Component) => {
-  const withUserList = (props) => {
+  const WithUserList = (props) => {
 
-    // useEffect(() => {
-
-    // }, []);
+    useEffect(() => {
+      getUserList();
+    }, []);
 
     return <Component {...props} userList={{}} />
   }
-  return withUserList;
+  return WithUserList;
 };
