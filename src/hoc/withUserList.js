@@ -3,11 +3,15 @@ import { getUserList } from "../services/userServices";
 
 export const withUserList = (Component) => {
   const WithUserList = (props) => {
+    
+    const fetchUsers = async () => {
+      const data = await getUserList();
+      console.log(data);
+    };
 
     useEffect(() => {
       (async () => {
-        const data = getUserList();
-        console.log(data);
+        fetchUsers();
       })();
     }, []);
 
