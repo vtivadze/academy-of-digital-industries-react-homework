@@ -1,1 +1,1 @@
-export { AccessIsDenied } from "./AccessIsDenied";
+export { AccessIsDenied } from './AccessIsDenied';

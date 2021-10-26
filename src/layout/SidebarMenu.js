@@ -1,10 +1,10 @@
-import React from "react";
-import { List } from "../components/menu";
-import { sidebarMenuItems } from "../api";
+import React from 'react';
+import { List } from '../components/menu';
+import { sidebarMenuItems } from '../api';
 
-export const SidebarMenu = () =>  {
+export const SidebarMenu = () => {
   const items = sidebarMenuItems;
-  
+
   return (
     <div className="sidebar-menu">
       <ul className="sidebar-menu__container">
@@ -12,4 +12,4 @@ export const SidebarMenu = () =>  {
       </ul>
     </div>
   );
-}
+};

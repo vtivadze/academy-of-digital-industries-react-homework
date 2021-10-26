@@ -1,15 +1,14 @@
-import { EmailInput } from "../../atoms";
+import { EmailInput } from '../../atoms';
 
 export const CheckEmailForm = () => {
   const onSubmit = event => event.preventDefault();
-  
+
   return (
     <form
       className="box column is-half is-offset-one-quarter mt-6"
-      onSubmit={ onSubmit }
-    >
+      onSubmit={onSubmit}>
       <h1 className="title has-text-centered">Check Email</h1>
-      
+
       <div className="field">
         <EmailInput inputName="email" />
       </div>

@@ -1,4 +1,4 @@
-import { PasswordInput, PasswordRepeatInput } from "../../atoms";
+import { PasswordInput, PasswordRepeatInput } from '../../atoms';
 
 export const SetNewPasswordForm = () => {
   const onSubmit = event => event.preventDefault();
@@ -6,10 +6,9 @@ export const SetNewPasswordForm = () => {
   return (
     <form
       className="box column is-half is-offset-one-quarter mt-6"
-      onSubmit={ onSubmit }
-    >
+      onSubmit={onSubmit}>
       <h1 className="title has-text-centered">Set New Password</h1>
-      
+
       <div className="field">
         <PasswordInput inputName="password" />
       </div>

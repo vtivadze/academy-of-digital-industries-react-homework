@@ -1,19 +1,18 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-export const Counter = ({initialValue, initialStep}) => {
+export const Counter = ({ initialValue, initialStep }) => {
   const [startingValue, setStartingValue] = useState(initialValue);
   const [startingStep, setStatingStep] = useState(initialStep);
   const [count, setCount] = useState(startingValue);
 
-  const setCustomStartingStep = (event) => {
-    let customStartingStep = parseInt(event.target.value) >= 0
-      ? parseInt(event.target.value)
-      : 0;
+  const setCustomStartingStep = event => {
+    let customStartingStep =
+      parseInt(event.target.value) >= 0 ? parseInt(event.target.value) : 0;
     setStatingStep(customStartingStep);
-  }
+  };
 
-  const setCustomInitialValue = (event) => {
+  const setCustomInitialValue = event => {
     let customInitialValue = parseInt(event.target.value);
     setStartingValue(customInitialValue);
     setCount(customInitialValue);
@@ -40,9 +39,9 @@ export const Counter = ({initialValue, initialStep}) => {
             <input
               className="input"
               type="number"
-              value={ startingValue }
-              onChange={ setCustomInitialValue }
-              step={ initialValue = initialValue > 0 ? initialValue : 0 }
+              value={startingValue}
+              onChange={setCustomInitialValue}
+              step={(initialValue = initialValue > 0 ? initialValue : 0)}
             />
           </div>
         </div>
@@ -52,9 +51,9 @@ export const Counter = ({initialValue, initialStep}) => {
             <input
               className="input"
               type="number"
-              value={ startingStep}
-              onChange={ setCustomStartingStep }
-              step={ initialStep }
+              value={startingStep}
+              onChange={setCustomStartingStep}
+              step={initialStep}
             />
           </div>
         </div>
@@ -67,35 +66,31 @@ export const Counter = ({initialValue, initialStep}) => {
           has-background-info
           is-size-2
           has-text-centered
-          has-text-white"
-      >
-        { count }
+          has-text-white">
+        {count}
       </div>
 
       <div className="buttons tile is-parent is-justify-content-space-between counter-manager">
         <div className="tile is-6 is-child pr-1">
           <button
             className="button is-fullwidth is-success has-text-weight-bold"
-            onClick={ addNumber }
-          >
-            + { startingStep }
+            onClick={addNumber}>
+            + {startingStep}
           </button>
         </div>
-        
+
         <div className="tile is-6 is-child pl-1">
           <button
             className="button is-fullwidth is-danger has-text-weight-bold"
-            onClick={ subNumber }
-          >
-            - { startingStep }
+            onClick={subNumber}>
+            - {startingStep}
           </button>
         </div>
 
         <div className="tile is-12 is-child">
           <button
             className="button is-fullwidth is-warning has-text-weight-bold"
-            onClick={ reset }
-          >
+            onClick={reset}>
             Reset
           </button>
         </div>

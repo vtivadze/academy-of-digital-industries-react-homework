@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
-import { Link as ItemLink, MenuItem } from "../../models";
-import { Link } from "./Link";
+import PropTypes from 'prop-types';
+import { Link as ItemLink, MenuItem } from '../../models';
+import { Link } from './Link';
 
 export const Item = props => {
-
-  const { item: {name, href, className} } = props;
+  const {
+    item: { name, href, className },
+  } = props;
   const link = new ItemLink(name, href, className);
 
   return (
@@ -12,10 +13,10 @@ export const Item = props => {
       <Link link={link} />
     </li>
   );
-}
+};
 
 Item.defaultProps = {
-  item: new MenuItem(["item", "#"]),
+  item: new MenuItem(['item', '#']),
 };
 
 Item.propTypes = {

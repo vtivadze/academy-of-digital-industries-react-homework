@@ -1,22 +1,15 @@
-import PropTypes from "prop-types";
-import { MenuItem } from "../../models";
-import { Item } from "./Item";
+import PropTypes from 'prop-types';
+import { MenuItem } from '../../models';
+import { Item } from './Item';
 
 export const List = props => {
-  return (
-    props.items.map((item, index) => {
-      return (
-        <Item
-          item={item}
-          key={`${index}-${item.name}`}
-        />
-      );
-    })
-  );
-}
+  return props.items.map((item, index) => {
+    return <Item item={item} key={`${index}-${item.name}`} />;
+  });
+};
 
 List.defaultProps = {
-  items: [new MenuItem("item", "#")],
+  items: [new MenuItem('item', '#')],
 };
 
 List.propTypes = {
@@ -26,4 +19,4 @@ List.propTypes = {
       href: PropTypes.string.isRequired,
     })
   ).isRequired,
-}
+};

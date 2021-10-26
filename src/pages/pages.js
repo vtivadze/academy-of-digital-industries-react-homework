@@ -11,7 +11,7 @@ import {
   CheckEmail,
   SetNewPassword,
   AccessIsDenied,
-} from "./index";
+} from './index';
 
 export const pages = {
   Home,
@@ -25,5 +25,5 @@ export const pages = {
   Register,
   CheckEmail,
   SetNewPassword,
-  AccessIsDenied
+  AccessIsDenied,
 };

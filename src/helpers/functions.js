@@ -1,4 +1,4 @@
-export const activateClassName = (className) => `${className}--active`;
+export const activateClassName = className => `${className}--active`;
 export const formatUser = user => {
   return `${user.firstName} ${user.lastName}, ${user.age}`;
 };
@@ -9,13 +9,13 @@ export const getRandomInteger = () => {
 };
 
 export const getFormInputClassName = (error, input) => {
-  let className = "input";
+  let className = 'input';
 
   if (error && input) {
-    className += " is-danger";
+    className += ' is-danger';
   } else if (!error && input) {
-    className += " is-success";
+    className += ' is-success';
   }
 
   return className;
-}
+};

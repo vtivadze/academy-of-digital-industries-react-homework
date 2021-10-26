@@ -1,5 +1,5 @@
-import { List } from "../components/menu";
-import { mainMenuItems } from "../api";
+import { List } from '../components/menu';
+import { mainMenuItems } from '../api';
 
 export const MainMenu = () => {
   const items = mainMenuItems;
@@ -11,4 +11,4 @@ export const MainMenu = () => {
       </ul>
     </nav>
   );
-}
+};

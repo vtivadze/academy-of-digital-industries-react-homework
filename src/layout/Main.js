@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes } from "../Routes";
+import React from 'react';
+import { Routes } from '../Routes';
 
 export const Main = () => {
   return (
@@ -7,4 +7,4 @@ export const Main = () => {
       <Routes />
     </main>
   );
-}
+};

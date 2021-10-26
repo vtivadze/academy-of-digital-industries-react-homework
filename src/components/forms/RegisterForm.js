@@ -1,4 +1,10 @@
-import { EmailInput, NameInput, PasswordInput, PasswordRepeatInput, UsernameInput } from "../../atoms";
+import {
+  EmailInput,
+  NameInput,
+  PasswordInput,
+  PasswordRepeatInput,
+  UsernameInput,
+} from '../../atoms';
 
 export const RegisterForm = () => {
   const onSubmit = event => event.preventDefault();
@@ -6,10 +12,9 @@ export const RegisterForm = () => {
   return (
     <form
       className="box column is-half is-offset-one-quarter mt-6"
-      onSubmit={ onSubmit }
-    >
+      onSubmit={onSubmit}>
       <h1 className="title has-text-centered">Register</h1>
-      
+
       <div className="field">
         <NameInput inputName="name" />
       </div>
@@ -25,7 +30,7 @@ export const RegisterForm = () => {
       <div className="field">
         <PasswordInput iniputName="password" />
       </div>
-        
+
       <div className="field">
         <PasswordRepeatInput iniputName="passwordRepeat" />
       </div>

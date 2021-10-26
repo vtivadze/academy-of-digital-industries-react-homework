@@ -1,6 +1,6 @@
-import React from "react";
-import "./App.css";
-import { Header, Footer, Sidebar, Main } from "./layout";
+import React from 'react';
+import './App.css';
+import { Header, Footer, Sidebar, Main } from './layout';
 
 export function App() {
   return (

@@ -1,28 +1,27 @@
 import PropsType from 'prop-types';
-import { useState, useEffect } from "react";
-import { getFormInputClassName } from "../../helpers";
-import { NAME_PATTERN } from "../../constants/validation";
-import { NAME_MIN_LENGTH } from "../../constants/validation";
-import { NAME_MAX_LENGTH } from "../../constants/validation";
+import { useState, useEffect } from 'react';
+import { getFormInputClassName } from '../../helpers';
+import { NAME_PATTERN } from '../../constants/validation';
+import { NAME_MIN_LENGTH } from '../../constants/validation';
+import { NAME_MAX_LENGTH } from '../../constants/validation';
 
-export const NameInput = ({ inputName="name" }) => {
-  const [name, setName] = useState("");
+export const NameInput = ({ inputName = 'name' }) => {
+  const [name, setName] = useState('');
   const [nameError, setNameError] = useState(false);
 
   useEffect(() => {
-    if (name &&
-        (
-          !name.match(NAME_PATTERN) ||
-          name.length < NAME_MIN_LENGTH ||
-          name.length > NAME_MAX_LENGTH
-        )
+    if (
+      name &&
+      (!name.match(NAME_PATTERN) ||
+        name.length < NAME_MIN_LENGTH ||
+        name.length > NAME_MAX_LENGTH)
     ) {
       setNameError(true);
     } else if (
-        name &&
-        name.match(NAME_PATTERN) &&
-        name.length >= NAME_MIN_LENGTH &&
-        name.length <= NAME_MAX_LENGTH
+      name &&
+      name.match(NAME_PATTERN) &&
+      name.length >= NAME_MIN_LENGTH &&
+      name.length <= NAME_MAX_LENGTH
     ) {
       setNameError(false);
     }
@@ -31,32 +30,34 @@ export const NameInput = ({ inputName="name" }) => {
   return (
     <div className="control has-icons-right">
       <input
-        className={ getFormInputClassName(nameError, name)}
+        className={getFormInputClassName(nameError, name)}
         type="text"
-        name={ inputName }
+        name={inputName}
         value={name}
         placeholder="Firstname LastName"
         required
-        onChange={({target}) => setName(target.value)}
+        onChange={({ target }) => setName(target.value)}
       />
 
-      {name && !nameError && <span className="icon is-small is-right">
-        <i className="fas fa-check"></i>
-      </span>}
-      {name && nameError &&
-      <>
+      {name && !nameError && (
         <span className="icon is-small is-right">
-          <i className="fas fa-exclamation-triangle"></i>
+          <i className="fas fa-check"></i>
         </span>
-        <p className="help is-danger">This name is invalid</p>
-      </>
-      }
+      )}
+      {name && nameError && (
+        <>
+          <span className="icon is-small is-right">
+            <i className="fas fa-exclamation-triangle"></i>
+          </span>
+          <p className="help is-danger">This name is invalid</p>
+        </>
+      )}
     </div>
   );
 };
 
 NameInput.defaultProps = {
-  inputName: "name",
+  inputName: 'name',
 };
 
 NameInput.propsType = {

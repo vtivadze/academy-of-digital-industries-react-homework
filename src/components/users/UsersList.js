@@ -1,19 +1,15 @@
-import PropTypes from "prop-types";
-import { User } from "./User";
-import { User as UserModel } from "../../models";
+import PropTypes from 'prop-types';
+import { User } from './User';
+import { User as UserModel } from '../../models';
 
-export const UsersList = (props) => {
-  return (
-    props.data.map((item, index) => {
-      return (
-        <User item={ item } id={ index } key={ index } />
-      );
-    })
-  );
+export const UsersList = props => {
+  return props.data.map((item, index) => {
+    return <User item={item} id={index} key={index} />;
+  });
 };
 
 UsersList.defaultProps = {
-  data: [new UserModel(["Guest", "Guest", null])],
+  data: [new UserModel(['Guest', 'Guest', null])],
 };
 
 UsersList.propTypes = {

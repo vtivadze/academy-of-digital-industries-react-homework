@@ -1,4 +1,4 @@
-import { SetNewPasswordForm } from "../../../components/forms";
+import { SetNewPasswordForm } from '../../../components/forms';
 
 export const SetNewPassword = () => {
   return (

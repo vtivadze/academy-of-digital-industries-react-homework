@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { LOGIN_PATH, REGISTER_PATH } from "../constants/routes";
-import { useAuthContext } from "../providers/AuthProvider";
+import { NavLink } from 'react-router-dom';
+import { LOGIN_PATH, REGISTER_PATH } from '../constants/routes';
+import { useAuthContext } from '../providers/AuthProvider';
 
 export const Login = () => {
   const { loggedIn, logOut } = useAuthContext();
@@ -10,16 +10,14 @@ export const Login = () => {
       <>
         <NavLink
           className="button is-info mr-0 mb-0"
-          to={ REGISTER_PATH }
-          activeClassName="has-background-dark"
-        >
+          to={REGISTER_PATH}
+          activeClassName="has-background-dark">
           <strong>Register</strong>
         </NavLink>
         <NavLink
           className="button is-info is-align-self-stretch mr-0"
-          to={ LOGIN_PATH }
-          activeClassName="has-background-dark"
-        >
+          to={LOGIN_PATH}
+          activeClassName="has-background-dark">
           <strong>Log in</strong>
         </NavLink>
       </>
@@ -36,7 +34,7 @@ export const Login = () => {
 
   return (
     <div className="buttons is-flex-direction-column-reverse mb-0">
-      { loggedIn ? renderUserLinks() : renderGuestLinks() }
+      {loggedIn ? renderUserLinks() : renderGuestLinks()}
     </div>
   );
 };

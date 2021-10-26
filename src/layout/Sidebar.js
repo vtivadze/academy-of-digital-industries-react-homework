@@ -1,4 +1,4 @@
-import { SidebarMenu } from ".";
+import { SidebarMenu } from '.';
 
 export const Sidebar = () => {
   return (
@@ -6,4 +6,4 @@ export const Sidebar = () => {
       <SidebarMenu />
     </aside>
   );
-}
+};

@@ -1,4 +1,4 @@
-import { CheckEmailForm } from "../../../components/forms";
+import { CheckEmailForm } from '../../../components/forms';
 
 export const CheckEmail = () => {
   return (
