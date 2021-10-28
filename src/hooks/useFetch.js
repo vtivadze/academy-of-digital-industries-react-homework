@@ -8,6 +8,8 @@ export const useFetch = (initialUrl, initialOptions) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+
     setLoading(true);
     setError(undefined);
 
@@ -17,21 +19,32 @@ export const useFetch = (initialUrl, initialOptions) => {
       try {
         const response = await fetch(url, {...options, signal: controller});
         const result = await response.json();
-        setData(result);
+
+        if (mounted) {
+          setData(result);
+        }
       }
       catch(error) {
-        setError(error);
+        if (mounted) {
+          setError(error);
+        }
       }
       finally {
-        setLoading(false);
+        setTimeout(() => {
+          if (mounted) {
+            setLoading(false);
+          }
+        }, 2000);
       }
     }
 
     fetchData();
 
+    // fetch clean up function
     return () => {
       console.log("CLEAN USE FETCH");
       controller.abort();
+      mounted = false;
     }
 
   }, [url, options]);
