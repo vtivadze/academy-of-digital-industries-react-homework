@@ -13,9 +13,9 @@ export default class ErrorBoundary extends React.Component {
     const {error} = this.state;
 
     if ( error) {
-      return <div className="columns">
+      return <div className="column is-half is-offset-one-quarter mt-5">
         <div className="box">
-          <h2 className="has-text-color-danger">Something went wrong!!!</h2>
+          <h2 className="has-text-danger">Something went wrong!!!</h2>
           <p>{error.toString()}</p>
         </div>
       </div>

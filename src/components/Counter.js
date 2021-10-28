@@ -31,6 +31,9 @@ export const Counter = ({ storageKey, initialValue, initialStep }) => {
     setCount(count - startingStep);
   };
 
+  // test code for ErrorBoundary component
+  throw SyntaxError("Invalid operation");
+
   return (
     <div className="counter has-text-weight-semibold">
       <div className="content has-background-light tile is-ancestor m-0">
