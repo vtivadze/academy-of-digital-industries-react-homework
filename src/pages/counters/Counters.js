@@ -7,16 +7,28 @@ export const Counters = () => {
 
       <div className="columns">
         <div className="column is-one-quarter">
-          <Counter initialValue={0} initialStep={1} />
+          <Counter storageKey="counter-1" initialValue={0} initialStep={1} />
         </div>
         <div className="column is-one-quarter">
-          <Counter initialValue={100} initialStep={10} />
+          <Counter
+            storageKey="counter-10"
+            initialValue={100}
+            initialStep={10}
+          />
         </div>
         <div className="column is-one-quarter">
-          <Counter initialValue={1000} initialStep={100} />
+          <Counter
+            storageKey="counter-100"
+            initialValue={1000}
+            initialStep={100}
+          />
         </div>
         <div className="column is-one-quarter">
-          <Counter initialValue={10000} initialStep={1000} />
+          <Counter
+            storageKey="counter-1000"
+            initialValue={10000}
+            initialStep={1000}
+          />
         </div>
       </div>
     </div>

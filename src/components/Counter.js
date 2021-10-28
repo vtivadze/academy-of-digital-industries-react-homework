@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
-export const Counter = ({ initialValue, initialStep }) => {
+export const Counter = ({ storageKey, initialValue, initialStep }) => {
   const [startingValue, setStartingValue] = useState(initialValue);
   const [startingStep, setStatingStep] = useState(initialStep);
-  const [count, setCount] = useState(startingValue);
+  const [count, setCount] = useLocalStorage(storageKey, startingValue);
 
   const setCustomStartingStep = event => {
     let customStartingStep =
