@@ -11,9 +11,11 @@ export const useFetch = (initialUrl, initialOptions) => {
     setLoading(true);
     setError(undefined);
 
+    const controller = new AbortController();
+
     const fetchData = async () => {
       try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, {...options, signal: controller});
         const result = await response.json();
         setData(result);
       }
@@ -29,6 +31,7 @@ export const useFetch = (initialUrl, initialOptions) => {
 
     return () => {
       console.log("CLEAN USE FETCH");
+      controller.abort();
     }
 
   }, [url, options]);
