@@ -32,7 +32,7 @@ export const Counter = ({ storageKey, initialValue, initialStep }) => {
   };
 
   // test code for ErrorBoundary component
-  throw SyntaxError("Invalid operation");
+  // throw SyntaxError("Invalid operation");
 
   return (
     <div className="counter has-text-weight-semibold">
