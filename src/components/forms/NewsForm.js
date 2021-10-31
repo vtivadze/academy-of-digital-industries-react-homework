@@ -1,52 +1,41 @@
 import { DateInput, SelectInput, SearchInput } from '../../atoms';
+import { useFetch } from "../../hooks";
+import { generateGetUrl } from '../../helpers';
 
 export const NewsForm = () => {
   const sortByData = ['relevancy', 'popularity', 'publishedAt'];
+
+  const apiUrl = process.env.REACT_APP_NEWS_API_URL;
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+  const url = `${apiUrl}?apiKey=${apiKey}`;
+
+  const initialOptions = {q: "business"};
+  const initialUrl = generateGetUrl(url, initialOptions);
+
+  const { data, setUrl } = useFetch("GET", initialUrl);
 
   const onSubmit = event => {
     event.preventDefault();
 
     const fd = new FormData(event.target);
-    const formData = {};
+    const options = {};
 
     for (let [key, value] of fd.entries()) {
-      formData[key] = value;
+      if (value) {
+        options[key] = value;
+      }
     }
 
-    const apiUrl = process.env.REACT_APP_NEWS_API_URL;
-    const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+    if (options) {
+      const newUrl = generateGetUrl(url, options);
+      setUrl(newUrl);
+    }
 
-    const queryData = Object.entries(formData).reduce((r, [key, value]) => {
-      return (r += value ? `${key}=${value}&` : '');
-    }, '');
-
-    const url = `${apiUrl}?${queryData}apiKey=${apiKey}`;
-    console.log(url);
-
-    // const url = `${apiUrl}?` + everythingData.entries.f
-
-    // fetch(`${process.env.REACT_APP_API_URL}/login`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-type': 'application/json',
-    //     Accept: 'application/json',
-    //   },
-    //   body: JSON.stringify(everythingData),
-    // })
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     if (result.token) {
-
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
   };
 
   return (
     <div className="box column is-10 is-offset-1 mt-6">
-      <h1 className="title has-text-centered">Everything</h1>
+      <h1 className="title has-text-centered">All the News</h1>
       <form onSubmit={onSubmit}>
         <div className="columns">
           <div className=" column field is-horizontal">
@@ -80,6 +69,10 @@ export const NewsForm = () => {
           </p>
         </div>
       </form>
+
+      {data && data.status === "ok" && data.articles.forEach(article => {
+        console.log(article);
+      })}
     </div>
   );
 };
