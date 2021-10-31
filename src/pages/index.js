@@ -3,7 +3,7 @@ export { Home } from './home';
 export { About } from './about';
 export { Services } from './services';
 export { Staff } from './staff';
-export { Everything } from './everything';
+export { News } from './news';
 
 // Authorization routes
 export { Login } from './auth';

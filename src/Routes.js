@@ -50,9 +50,9 @@ export function Routes(props) {
         <pages.Users />
       </Route>
 
-      <Route path={route.EVERYTHING_PATH}>
+      <Route path={route.NEWS_PATH}>
         <SecureComponent
-          Page={pages.Everything}
+          Page={pages.News}
         />
       </Route>
 

@@ -1,6 +1,6 @@
 import { DateInput, SelectInput, SearchInput } from '../../atoms';
 
-export const EverythingForm = () => {
+export const NewsForm = () => {
   const sortByData = ['relevancy', 'popularity', 'publishedAt'];
 
   const onSubmit = event => {
@@ -16,11 +16,11 @@ export const EverythingForm = () => {
     const apiUrl = process.env.REACT_APP_NEWS_API_URL;
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
-    const request = Object.entries(formData).reduce((r, [key, value]) => {
+    const queryData = Object.entries(formData).reduce((r, [key, value]) => {
       return (r += value ? `${key}=${value}&` : '');
     }, '');
 
-    const url = `${apiUrl}?${request}apiKey=${apiKey}`;
+    const url = `${apiUrl}?${queryData}apiKey=${apiKey}`;
     console.log(url);
 
     // const url = `${apiUrl}?` + everythingData.entries.f
