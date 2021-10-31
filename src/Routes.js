@@ -50,6 +50,10 @@ export function Routes(props) {
         <pages.Users />
       </Route>
 
+      <Route path={route.EVERYTHING_PATH}>
+        <pages.Everything />
+      </Route>
+
       <Route path={route.PROFILE_PATH}>
         <SecureComponent
           Page={pages.Profile}
