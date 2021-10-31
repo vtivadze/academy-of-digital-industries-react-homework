@@ -19,3 +19,10 @@ export const getFormInputClassName = (error, input) => {
 
   return className;
 };
+
+export const generateGetUrl = (url, options) => {
+  const queryData = Object.entries(options).reduce((query, [key, value]) => {
+    return query += `&${key}=${value}`;
+  }, "");
+  return url + queryData;
+};
