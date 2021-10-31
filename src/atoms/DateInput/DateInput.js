@@ -5,7 +5,7 @@ export const DateInput = ({ inputName = 'date', value = '' }) => {
   const [date, setDate] = useState('');
 
   return (
-    <div className="control has-icons-left has-icons-right">
+    <div className="control">
       <input
         className=""
         name={inputName}
