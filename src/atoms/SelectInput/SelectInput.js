@@ -1,8 +1,8 @@
 export const SelectInput = ({ options }) => {
   return (
-    <div class="control select">
+    <div className="control select">
       <select>
-        {options.map(option => <option>{option}</option>)}
+        {options.map((item, index) => <option key={index}>{item}</option>)}
       </select>
     </div>
   );
