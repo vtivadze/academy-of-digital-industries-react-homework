@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useFetch = (initialMethod, initialUrl, initialOptions) => {
-  const [method, setMethod] = useState(initialMethod);
+export const useFetch = (initialUrl, initialOptions) => {
   const [url, setUrl] = useState(initialUrl);
   const [options, setOptions] = useState(initialOptions);
   const [data, setData] = useState();
@@ -18,13 +17,7 @@ export const useFetch = (initialMethod, initialUrl, initialOptions) => {
 
     const fetchData = async () => {
       try {
-        let response = null;
-        if (method === "GET") {
-          response = await fetch(url);
-        } else if (method === "POST") {
-          response = await fetch(url, options);
-        }
-
+        const response = await fetch(url);
         const result = await response.json();
 
         if (mounted) {
@@ -32,7 +25,6 @@ export const useFetch = (initialMethod, initialUrl, initialOptions) => {
         }
       }
       catch(error) {
-        console.log(error);
         if (mounted) {
           setError(error);
         }
@@ -53,7 +45,7 @@ export const useFetch = (initialMethod, initialUrl, initialOptions) => {
       mounted = false;
     }
 
-  }, [method, url, options]);
+  }, [url, options]);
 
-  return {data, error, loading, setMethod, setUrl, setOptions};
+  return {data, error, loading, setUrl, setOptions};
 };

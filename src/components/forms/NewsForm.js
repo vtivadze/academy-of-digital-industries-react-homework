@@ -12,7 +12,7 @@ export const NewsForm = () => {
   const initialOptions = {q: "business"};
   const initialUrl = generateGetUrl(url, initialOptions);
 
-  const { data, setUrl } = useFetch("GET", initialUrl);
+  const { data, setUrl } = useFetch(initialUrl);
 
   const onSubmit = event => {
     event.preventDefault();
