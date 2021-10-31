@@ -4,3 +4,5 @@ export { PasswordInput } from './PasswordInput';
 export { PasswordRepeatInput } from './PasswordRepeatInput';
 export { SecureComponent } from './SecureComponent';
 export { UsernameInput } from './UsernameInput';
+export { SelectInput } from './SelectInput';
+export { DateInput } from './DateInput';
