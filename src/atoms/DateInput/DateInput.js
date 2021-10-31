@@ -11,7 +11,6 @@ export const DateInput = ({ inputName = 'date', value = '' }) => {
         name={inputName}
         value={date ? date : value}
         type="date"
-        placeholder
         required
         onChange={({ target }) => setDate(target.value)}
       />
