@@ -51,7 +51,9 @@ export function Routes(props) {
       </Route>
 
       <Route path={route.EVERYTHING_PATH}>
-        <pages.Everything />
+        <SecureComponent
+          Page={pages.Everything}
+        />
       </Route>
 
       <Route path={route.PROFILE_PATH}>

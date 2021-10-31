@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 
 import { AUTH_TOKEN } from '../../constants/constants';
 import { itemExists, removeItem, saveItem } from '../../helpers/localStorage';
-import { PROFILE_PATH } from '../../constants/routes';
+import { HOME_PATH } from '../../constants/routes';
 
 export const AuthContext = React.createContext(null);
 AuthContext.displayName = 'AuthContext';
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   const logIn = token => {
     saveItem(AUTH_TOKEN, token);
     setLoggedIn(true);
-    history.replace(PROFILE_PATH);
+    history.replace(HOME_PATH);
   };
 
   return (
