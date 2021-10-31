@@ -1,3 +1,7 @@
+import { EverythingForm } from "../../components/forms/EverythingForm";
+
 export const Everything = () => {
-  return <h1 className="title">Everything Page</h1>;
+  return (
+    <EverythingForm />
+  );
 };

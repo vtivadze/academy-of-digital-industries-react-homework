@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import "./BulmaCalendar.min.css";
 
 export const DateInput = ({ inputName = 'date', value = '' }) => {
   const [date, setDate] = useState('');
@@ -8,20 +7,14 @@ export const DateInput = ({ inputName = 'date', value = '' }) => {
   return (
     <div className="control has-icons-left has-icons-right">
       <input
-        className="datetimepicker-dummy-inut"
+        className=""
         name={inputName}
         value={date ? date : value}
-        type="text"
+        type="date"
         placeholder
         required
         onChange={({ target }) => setDate(target.value)}
       />
-
-      <span className="icon is-small is-left">
-        <i className="fas fa-envelope"></i>
-      </span>
-      
-      
     </div>
   );
 };
