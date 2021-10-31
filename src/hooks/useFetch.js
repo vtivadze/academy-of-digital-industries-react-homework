@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-export const useFetch = (initialUrl, initialOptions) => {
+export const useFetch = (initialMethod, initialUrl, initialOptions) => {
+  const [method, setMethod] = useState(initialMethod);
   const [url, setUrl] = useState(initialUrl);
-  const [options, setOptions] = useState(initialUrl);
+  const [options, setOptions] = useState(initialOptions);
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
@@ -13,11 +14,17 @@ export const useFetch = (initialUrl, initialOptions) => {
     setLoading(true);
     setError(undefined);
 
-    const controller = new AbortController();
+    // const controller = new AbortController();
 
     const fetchData = async () => {
       try {
-        const response = await fetch(url, {...options, signal: controller});
+        let response = null;
+        if (method === "GET") {
+          response = await fetch(url);
+        } else if (method === "POST") {
+          response = await fetch(url, options);
+        }
+
         const result = await response.json();
 
         if (mounted) {
@@ -25,16 +32,15 @@ export const useFetch = (initialUrl, initialOptions) => {
         }
       }
       catch(error) {
+        console.log(error);
         if (mounted) {
           setError(error);
         }
       }
       finally {
-        setTimeout(() => {
-          if (mounted) {
-            setLoading(false);
-          }
-        }, 2000);
+        if (mounted) {
+          setLoading(false);
+        }
       }
     }
 
@@ -43,11 +49,11 @@ export const useFetch = (initialUrl, initialOptions) => {
     // fetch clean up function
     return () => {
       console.log("CLEAN USE FETCH");
-      controller.abort();
+      // controller.abort();
       mounted = false;
     }
 
-  }, [url, options]);
+  }, [method, url, options]);
 
-  return {data, error, loading, setUrl, setOptions};
+  return {data, error, loading, setMethod, setUrl, setOptions};
 };
