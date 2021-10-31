@@ -6,3 +6,4 @@ export { SecureComponent } from './SecureComponent';
 export { UsernameInput } from './UsernameInput';
 export { SelectInput } from './SelectInput';
 export { DateInput } from './DateInput';
+export { SearchInput } from './SearchInput';
