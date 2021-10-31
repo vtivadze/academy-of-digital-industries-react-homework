@@ -12,7 +12,6 @@ export const SearchInput = ({ inputName = 'search' }) => {
         name={inputName}
         value={search}
         placeholder="Firstname LastName"
-        required
         onChange={({ target }) => setSearch(target.value)}
       />
     </div>
