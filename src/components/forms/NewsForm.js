@@ -1,6 +1,7 @@
 import { DateInput, SelectInput, SearchInput } from '../../atoms';
 import { useFetch } from "../../hooks";
 import { generateGetUrl } from '../../helpers';
+import { ArticlePreviewList} from "../../components/ArticlePreviewList";
 
 export const NewsForm = () => {
   const sortByData = ['relevancy', 'popularity', 'publishedAt'];
@@ -9,7 +10,7 @@ export const NewsForm = () => {
   const apiKey = process.env.REACT_APP_NEWS_API_KEY;
   const url = `${apiUrl}?apiKey=${apiKey}`;
 
-  const initialOptions = {q: "business"};
+  const initialOptions = {q: "React"};
   const initialUrl = generateGetUrl(url, initialOptions);
 
   const { data, setUrl } = useFetch(initialUrl);
@@ -36,7 +37,7 @@ export const NewsForm = () => {
   return (
     <div className="box column is-10 is-offset-1 mt-6">
       <h1 className="title has-text-centered">All the News</h1>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="mb-6">
         <div className="columns">
           <div className=" column field is-horizontal">
             <label className="label mr-3">From</label>
@@ -52,9 +53,7 @@ export const NewsForm = () => {
         <div className="columns">
           <div className="column field is-horizontal">
             <label className="label mr-3">Keyword</label>
-            <SearchInput
-              inputName="q"
-            />
+            <SearchInput inputName="q" />
           </div>
 
           <div className="column field is-horizontal">
@@ -70,9 +69,9 @@ export const NewsForm = () => {
         </div>
       </form>
 
-      {data && data.status === "ok" && data.articles.forEach(article => {
-        console.log(article);
-      })}
+      {data && data.status === 'ok' &&
+        <ArticlePreviewList articles={data.articles} />
+      }
     </div>
   );
 };
