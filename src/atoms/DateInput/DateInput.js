@@ -1,8 +1,19 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from "prop-types"
 import { useState } from 'react';
 
-export const DateInput = ({ inputName = 'date', value = '' }) => {
-  const [date, setDate] = useState('');
+export const DateInput = ({
+  inputName = 'date',
+  value = '',
+  updateLocalStorage = null,
+}) => {
+  const [date, setDate] = useState(value);
+
+  const onChangeHandler = ({ target }) => {
+    setDate(target.value);
+    if (updateLocalStorage instanceof Function) {
+      updateLocalStorage(target.value);
+    }
+  };
 
   return (
     <div className="control">
@@ -11,7 +22,7 @@ export const DateInput = ({ inputName = 'date', value = '' }) => {
         name={inputName}
         value={date ? date : value}
         type="date"
-        onChange={({ target }) => setDate(target.value)}
+        onChange={onChangeHandler}
       />
     </div>
   );

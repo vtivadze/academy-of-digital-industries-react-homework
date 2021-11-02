@@ -1,8 +1,15 @@
 import PropsType from 'prop-types';
 import { useState } from 'react';
 
-export const SearchInput = ({ inputName = 'search' }) => {
-  const [search, setSearch] = useState('');
+export const SearchInput = ({ inputName = 'search', value = '', updateLocalStorage = null }) => {
+  const [search, setSearch] = useState(value);
+
+  const onChangeHandler = ({ target }) => {
+    setSearch(target.value);
+    if (updateLocalStorage instanceof Function) {
+      updateLocalStorage(target.value);
+    }
+  };
 
   return (
     <div className="control has-icons-right">
@@ -12,7 +19,7 @@ export const SearchInput = ({ inputName = 'search' }) => {
         name={inputName}
         value={search}
         placeholder="Firstname LastName"
-        onChange={({ target }) => setSearch(target.value)}
+        onChange={ onChangeHandler }
       />
     </div>
   );

@@ -1,16 +1,22 @@
 import { DateInput, SelectInput, SearchInput } from '../../atoms';
-import { useFetch } from "../../hooks";
+import { useFetch } from '../../hooks';
 import { generateGetUrl } from '../../helpers';
-import { ArticlePreviewList} from "../../components/ArticlePreviewList";
+import { ArticlePreviewList } from '../../components/ArticlePreviewList';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const NewsForm = () => {
+  const [from, setFrom] = useLocalStorage('news:from', '');
+  const [to, setTo] = useLocalStorage('news:to', '');
+  const [q, setQ] = useLocalStorage('news:q', '');
+  const [sortBy, setSortBy] = useLocalStorage('news:sortBy', 0);
+
   const sortByData = ['relevancy', 'popularity', 'publishedAt'];
 
   const apiUrl = process.env.REACT_APP_NEWS_API_URL;
   const apiKey = process.env.REACT_APP_NEWS_API_KEY;
   const url = `${apiUrl}?apiKey=${apiKey}`;
 
-  const initialOptions = {q: "React"};
+  const initialOptions = { q: 'React' };
   const initialUrl = generateGetUrl(url, initialOptions);
 
   const { data, setUrl } = useFetch(initialUrl);
@@ -31,7 +37,6 @@ export const NewsForm = () => {
       const newUrl = generateGetUrl(url, options);
       setUrl(newUrl);
     }
-
   };
 
   return (
@@ -41,24 +46,33 @@ export const NewsForm = () => {
         <div className="columns">
           <div className=" column field is-horizontal">
             <label className="label mr-3">From</label>
-            <DateInput inputName="from" />
+            <DateInput
+              inputName="from"
+              value={from}
+              updateLocalStorage={setFrom}
+            />
           </div>
 
           <div className="column field is-horizontal">
             <label className="label mr-3">To</label>
-            <DateInput inputName="to" />
+            <DateInput inputName="to" value={to} updateLocalStorage={setTo} />
           </div>
         </div>
 
         <div className="columns">
           <div className="column field is-horizontal">
             <label className="label mr-3">Keyword</label>
-            <SearchInput inputName="q" />
+            <SearchInput inputName="q" value={q} updateLocalStorage={setQ} />
           </div>
 
           <div className="column field is-horizontal">
             <label className="label mr-3">Sort By</label>
-            <SelectInput inputName="sortBy" options={['', ...sortByData]} />
+            <SelectInput
+              inputName="sortBy"
+              options={['', ...sortByData]}
+              selectedItem={sortBy}
+              updateLocalStorage={setSortBy}
+            />
           </div>
         </div>
 
@@ -69,9 +83,9 @@ export const NewsForm = () => {
         </div>
       </form>
 
-      {data && data.status === 'ok' &&
+      {data && data.status === 'ok' && (
         <ArticlePreviewList articles={data.articles} />
-      }
+      )}
     </div>
   );
 };
