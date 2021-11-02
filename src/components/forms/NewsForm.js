@@ -1,8 +1,6 @@
 import { DateInput, SelectInput, SearchInput } from '../../atoms';
-import { useFetch } from '../../hooks';
-import { generateGetUrl } from '../../helpers';
 import { ArticlePreviewList } from '../../components/ArticlePreviewList';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useLocalStorage, useNewsEverything } from '../../hooks';
 
 export const NewsForm = () => {
   const [from, setFrom] = useLocalStorage('news:from', '');
@@ -12,14 +10,7 @@ export const NewsForm = () => {
 
   const sortByData = ['relevancy', 'popularity', 'publishedAt'];
 
-  const apiUrl = process.env.REACT_APP_NEWS_API_URL;
-  const apiKey = process.env.REACT_APP_NEWS_API_KEY;
-  const url = `${apiUrl}?apiKey=${apiKey}`;
-
-  const initialOptions = { q: 'React' };
-  const initialUrl = generateGetUrl(url, initialOptions);
-
-  const { data, setUrl } = useFetch(initialUrl);
+  const { data, setNewsUrl } = useNewsEverything();
 
   const onSubmit = event => {
     event.preventDefault();
@@ -34,8 +25,7 @@ export const NewsForm = () => {
     }
 
     if (options) {
-      const newUrl = generateGetUrl(url, options);
-      setUrl(newUrl);
+      setNewsUrl(options);
     }
   };
 
