@@ -51,9 +51,7 @@ export function Routes(props) {
       </Route>
 
       <Route path={route.NEWS_PATH}>
-        <SecureComponent
-          Page={pages.News}
-        />
+        <SecureComponent Page={pages.News} />
       </Route>
 
       <Route path={route.PROFILE_PATH}>

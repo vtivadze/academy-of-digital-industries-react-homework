@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export const useFetch = (initialUrl, initialOptions) => {
   const [url, setUrl] = useState(initialUrl);
@@ -23,29 +23,26 @@ export const useFetch = (initialUrl, initialOptions) => {
         if (mounted) {
           setData(result);
         }
-      }
-      catch(error) {
+      } catch (error) {
         if (mounted) {
           setError(error);
         }
-      }
-      finally {
+      } finally {
         if (mounted) {
           setLoading(false);
         }
       }
-    }
+    };
 
     fetchData();
 
     // fetch clean up function
     return () => {
-      console.log("CLEAN USE FETCH");
+      console.log('CLEAN USE FETCH');
       // controller.abort();
       mounted = false;
-    }
-
+    };
   }, [url, options]);
 
-  return {data, error, loading, setUrl, setOptions};
+  return { data, error, loading, setUrl, setOptions };
 };

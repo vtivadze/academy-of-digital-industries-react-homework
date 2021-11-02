@@ -1,5 +1,5 @@
-import { useFetch } from "./useFetch";
-import { generateGetUrl } from "../helpers";
+import { useFetch } from './useFetch';
+import { generateGetUrl } from '../helpers';
 
 export const useNewsEverything = () => {
   const apiUrl = process.env.REACT_APP_NEWS_API_URL;
@@ -13,7 +13,7 @@ export const useNewsEverything = () => {
 
   const { data, setUrl } = useFetch(initialUrl);
 
-  const setNewsUrl = (options) => {
+  const setNewsUrl = options => {
     const newUrl = generateGetUrl(url, options);
     setUrl(newUrl);
   };

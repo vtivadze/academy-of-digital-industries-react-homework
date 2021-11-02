@@ -1,1 +1,1 @@
-export { ArticlePreviewList } from "./ArticlePreviewList";
+export { ArticlePreviewList } from './ArticlePreviewList';

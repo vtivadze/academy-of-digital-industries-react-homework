@@ -6,21 +6,23 @@ export default class ErrorBoundary extends React.Component {
   };
 
   componentDidCatch(error, errorInfo) {
-    this.setState({error});
+    this.setState({ error });
   }
 
   render() {
-    const {error} = this.state;
+    const { error } = this.state;
 
-    if ( error) {
-      return <div className="column is-half is-offset-one-quarter mt-5">
-        <div className="box">
-          <h2 className="has-text-danger">Something went wrong!!!</h2>
-          <p>{error.toString()}</p>
+    if (error) {
+      return (
+        <div className="column is-half is-offset-one-quarter mt-5">
+          <div className="box">
+            <h2 className="has-text-danger">Something went wrong!!!</h2>
+            <p>{error.toString()}</p>
+          </div>
         </div>
-      </div>
+      );
     }
 
     return this.props.children;
-  };
+  }
 }

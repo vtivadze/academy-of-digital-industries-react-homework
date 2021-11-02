@@ -1,7 +1,11 @@
 import PropsType from 'prop-types';
 import { useState } from 'react';
 
-export const SearchInput = ({ inputName = 'search', value = '', updateLocalStorage = null }) => {
+export const SearchInput = ({
+  inputName = 'search',
+  value = '',
+  updateLocalStorage = null,
+}) => {
   const [search, setSearch] = useState(value);
 
   const onChangeHandler = ({ target }) => {
@@ -19,7 +23,7 @@ export const SearchInput = ({ inputName = 'search', value = '', updateLocalStora
         name={inputName}
         value={search}
         placeholder="Firstname LastName"
-        onChange={ onChangeHandler }
+        onChange={onChangeHandler}
       />
     </div>
   );
