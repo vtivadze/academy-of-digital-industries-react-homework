@@ -1,9 +1,8 @@
 import React from 'react';
-import { memo } from 'react';
 import { List } from '../components/menu';
 import { sidebarMenuItems } from '../api';
 
-export const SidebarMenu = memo(() => {
+export const SidebarMenu = () => {
   const items = sidebarMenuItems;
 
   return (
@@ -13,4 +12,4 @@ export const SidebarMenu = memo(() => {
       </ul>
     </div>
   );
-});
+};
