@@ -52,9 +52,31 @@ describe('EmailInput', () => {
 // });
 
 describe('EmailInput shapshot', () => {
+  test('snap 1', () => {
+    const mockedName = 'mocked-name';
+    const Component = render(<EmailInput inputName={mockedName} />);
+
+    expect(Component).toMatchSnapshot();
+  });
+
   test('snap 2', () => {
     const mockedName = 'mocked-name';
     const Component = render(<EmailInput inputName={mockedName} />);
+    const inputElement = Component.getByTestId(
+      TEST_IDS.emailInput.inputElement
+    );
+    userEvent.type(inputElement, 'wrong');
+
+    expect(Component).toMatchSnapshot();
+  });
+
+  test('snap 3', () => {
+    const mockedName = 'mocked-name';
+    const Component = render(<EmailInput inputName={mockedName} />);
+    const inputElement = Component.getByTestId(
+      TEST_IDS.emailInput.inputElement
+    );
+    userEvent.type(inputElement, 'test@test.com');
 
     expect(Component).toMatchSnapshot();
   });
