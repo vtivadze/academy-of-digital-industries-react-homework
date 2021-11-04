@@ -4,6 +4,7 @@ import { getFormInputClassName } from '../../helpers';
 import { EMAIL_MIN_LENGTH } from '../../constants/validation';
 import { EMAIL_MAX_LENGTH } from '../../constants/validation';
 import { EMAIL_PATTERN } from '../../constants/validation';
+import { TEST_IDS } from '../../constants/testIds';
 
 export const EmailInput = ({ inputName = 'email', value = '' }) => {
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ export const EmailInput = ({ inputName = 'email', value = '' }) => {
         autoComplete="email"
         required
         onChange={({ target }) => setEmail(target.value)}
+        data-testid = {TEST_IDS.emailInput.inputElement}
       />
 
       <span className="icon is-small is-left">
