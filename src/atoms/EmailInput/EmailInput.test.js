@@ -25,6 +25,17 @@ describe('EmailInput', () => {
       Component.getByTestId(TEST_IDS.emailInput.hasError)
     ).toBeInTheDocument();
   });
+
+  it('should render success state', () => {
+    const mockedName = 'mocked-name';
+    const Component = render(<EmailInput inputName={mockedName} />);
+    const inputElement = Component.getByTestId(TEST_IDS.emailInput.inputElement);
+    userEvent.type(inputElement, 'test@test.com');
+
+    expect(
+      Component.getByTestId(TEST_IDS.emailInput.success)
+    ).toBeInTheDocument();
+  });
 });
 
 // describe('EmailInput snapshots', () => {
