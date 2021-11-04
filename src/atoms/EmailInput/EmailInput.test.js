@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { TEST_IDS } from '../../constants/testIds';
 import { EmailInput } from './EmailInput';
 
@@ -12,6 +13,17 @@ describe('EmailInput', () => {
         'name'
       )
     ).toBe(mockedName);
+  });
+
+  it('should render error state', () => {
+    const mockedName = 'mocked-name';
+    const Component = render(<EmailInput inputName={mockedName} />);
+    const inputElement = Component.getByTestId(TEST_IDS.emailInput.inputElement);
+    userEvent.type(inputElement, 'wrong');
+
+    expect(
+      Component.getByTestId(TEST_IDS.emailInput.hasError)
+    ).toBeInTheDocument();
   });
 });
 

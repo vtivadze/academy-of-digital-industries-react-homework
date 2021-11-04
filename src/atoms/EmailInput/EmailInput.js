@@ -39,20 +39,24 @@ export const EmailInput = ({ inputName = 'email', value = '' }) => {
         autoComplete="email"
         required
         onChange={({ target }) => setEmail(target.value)}
-        data-testid = {TEST_IDS.emailInput.inputElement}
+        data-testid={TEST_IDS.emailInput.inputElement}
       />
 
       <span className="icon is-small is-left">
         <i className="fas fa-envelope"></i>
       </span>
       {!emailError && email && (
-        <span className="icon is-small is-right">
+        <span
+          className="icon is-small is-right"
+          data-testid={TEST_IDS.emailInput.success}>
           <i className="fas fa-check"></i>
         </span>
       )}
       {emailError && email && (
         <>
-          <span className="icon is-small is-right">
+          <span
+            className="icon is-small is-right"
+            data-testid={TEST_IDS.emailInput.hasError}>
             <i className="fas fa-exclamation-triangle"></i>
           </span>
           <p className="help is-danger">This email is invalid</p>
