@@ -50,6 +50,10 @@ export function Routes(props) {
         <pages.Users />
       </Route>
 
+      <Route path={route.STYLE_MODULE_PATH}>
+        <pages.StyleModule />
+      </Route>
+
       <Route path={route.NEWS_PATH}>
         <SecureComponent Page={pages.News} />
       </Route>

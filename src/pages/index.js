@@ -15,6 +15,7 @@ export { SetNewPassword } from './auth';
 export { Counters } from './counters';
 export { Users } from './users';
 export { Profile } from './profile';
+export { StyleModule } from './styleModule';
 
 // Helper routes
 export { AccessIsDenied } from './accessIsDenied';

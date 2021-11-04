@@ -5,4 +5,5 @@ export const sidebarMenuItems = [
   ['Users', route.USERS_PATH],
   ['Profile', route.PROFILE_PATH],
   ['News', route.NEWS_PATH],
+  ['Style Module', route.STYLE_MODULE_PATH],
 ];
